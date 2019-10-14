@@ -18,6 +18,7 @@ namespace sdp_projek_revisi
         {
             InitializeComponent();
             tabControl1.Hide();
+            button1.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,8 +53,10 @@ namespace sdp_projek_revisi
         {
             tabControl1.Size = new Size(1150, 600);
             tabControl1.TabPages.Clear();
+            button1.Show();
             tabControl1.Show();
-            if(j == "kasir")
+
+            if (j == "kasir")
             {
                 btnMenu = new Button[7];
                 for(int i = 0; i<7; i++)
@@ -66,7 +69,7 @@ namespace sdp_projek_revisi
                     btnMenu[i].Font = new Font("MS Reference Sans Serif", 12);
                 }
                 btnMenu[0].Text = "Data Member";btnMenu[0].Click += data_member;
-                btnMenu[1].Text = "New Member";
+                btnMenu[1].Text = "New Member";btnMenu[1].Click += new_member;
                 btnMenu[2].Text = "Rawat Spesialis";
                 btnMenu[3].Text = "Rawat Jalan";
                 btnMenu[4].Text = "Rawat Inap";
@@ -96,14 +99,29 @@ namespace sdp_projek_revisi
             FormDataMember frm = new FormDataMember();
             addTab(frm);
         }
+
+        private void new_member(object sender, EventArgs e)
+        {
+            FormNewMember frm = new FormNewMember();
+            addTab(frm);
+        }
         private void logout(object sender, EventArgs e)
         {
             for(int i = 0; i<btnMenu.Length; i++)
             {
                 Controls.Remove(btnMenu[i]);
             }
+            button1.Hide();
             tabControl1.Hide();
             login_form();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            if(tabControl1.TabPages.Count > 0)
+            {
+                tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+            }
         }
     }
 }

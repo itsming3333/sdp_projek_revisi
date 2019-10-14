@@ -10,37 +10,23 @@ using System.Windows.Forms;
 
 namespace sdp_projek_revisi
 {
-    public partial class FormDataMember : Form
+    public partial class FormNewMember : Form
     {
-        public FormDataMember()
+        public FormNewMember()
         {
             InitializeComponent();
         }
 
-        private void FormDataMember_Load(object sender, EventArgs e)
+        private void FormNewMember_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
             label2.Text = DateTime.Now.ToString();
             timer1.Start();
-            comboBox1.SelectedIndex = 0;
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             label2.Text = DateTime.Now.ToString();
-        }
-
-        private void Button2_Click(object sender, EventArgs e)
-        {
-            TabPage parent = (TabPage)this.Parent;
-            
-            this.Close();
-            
         }
     }
 }
