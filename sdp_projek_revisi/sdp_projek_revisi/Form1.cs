@@ -13,6 +13,7 @@ namespace sdp_projek_revisi
     public partial class Form1 : Form
     {
         public Form curForm = null;
+        public Button[] btnMenu;
         public Form1()
         {
             InitializeComponent();
@@ -54,27 +55,27 @@ namespace sdp_projek_revisi
             tabControl1.Show();
             if(j == "kasir")
             {
-                Button[] btnKasir = new Button[7];
+                btnMenu = new Button[7];
                 for(int i = 0; i<7; i++)
                 {
-                    btnKasir[i] = new Button();
-                    btnKasir[i].Height = 100;
-                    btnKasir[i].Width = 100;
-                    btnKasir[i].BackColor = Color.LightBlue;
-                    btnKasir[i].Location = new Point(i*100+15, 15);
-                    btnKasir[i].Font = new Font("MS Reference Sans Serif", 12);
+                    btnMenu[i] = new Button();
+                    btnMenu[i].Height = 100;
+                    btnMenu[i].Width = 100;
+                    btnMenu[i].BackColor = Color.LightBlue;
+                    btnMenu[i].Location = new Point(i*100+15, 15);
+                    btnMenu[i].Font = new Font("MS Reference Sans Serif", 12);
                 }
-                btnKasir[0].Text = "Data Member";btnKasir[0].Click += data_member;
-                btnKasir[1].Text = "New Member";
-                btnKasir[2].Text = "Rawat Spesialis";
-                btnKasir[3].Text = "Rawat Jalan";
-                btnKasir[4].Text = "Rawat Inap";
-                btnKasir[5].Text = "Donor";
-                btnKasir[6].Text = "Logout";
+                btnMenu[0].Text = "Data Member";btnMenu[0].Click += data_member;
+                btnMenu[1].Text = "New Member";
+                btnMenu[2].Text = "Rawat Spesialis";
+                btnMenu[3].Text = "Rawat Jalan";
+                btnMenu[4].Text = "Rawat Inap";
+                btnMenu[5].Text = "Donor";
+                btnMenu[6].Text = "Logout";btnMenu[6].Click += logout;
 
                 for (int i = 0; i < 7; i++)
                 {
-                    Controls.Add(btnKasir[i]);
+                    Controls.Add(btnMenu[i]);
                 }
             }
         }
@@ -89,10 +90,20 @@ namespace sdp_projek_revisi
             tabControl1.TabPages.Add(tab);
         }
 
+
         private void data_member(object sender, EventArgs e)
         {
             FormDataMember frm = new FormDataMember();
             addTab(frm);
+        }
+        private void logout(object sender, EventArgs e)
+        {
+            for(int i = 0; i<btnMenu.Length; i++)
+            {
+                Controls.Remove(btnMenu[i]);
+            }
+            tabControl1.Hide();
+            login_form();
         }
     }
 }
