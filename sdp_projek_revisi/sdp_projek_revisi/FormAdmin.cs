@@ -10,31 +10,38 @@ using System.Windows.Forms;
 
 namespace sdp_projek_revisi
 {
-    
-    public partial class FormPengguna : Form
+    public partial class FormAdmin : Form
     {
         Form1 parent;
-        public FormPengguna()
+        public FormAdmin()
         {
             InitializeComponent();
         }
 
-        private void FormPengguna_Load(object sender, EventArgs e)
+        private void FormAdmin_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
             parent = (Form1)this.MdiParent;
+            label5.Text = "";
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            parent.login_form();
+            parent.form_pengguna();
             this.Close();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            parent.admin_form();
-            this.Close();
+            if(textBox1.Text == parent.passAdmin)
+            {
+                parent.login_as("admin");
+                this.Close();
+            }
+            else
+            {
+                label5.Text = "Kode administrasi salah!";
+            }
         }
     }
 }

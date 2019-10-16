@@ -56,11 +56,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDataMember.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDataMember.Designer.cs">
       <DependentUpon>FormDataMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataPegawai.Designer.cs">
+      <DependentUpon>FormDataPegawai.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -85,8 +97,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDataMember.resx">
       <DependentUpon>FormDataMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataPegawai.resx">
+      <DependentUpon>FormDataPegawai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
