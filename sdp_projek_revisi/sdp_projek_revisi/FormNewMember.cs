@@ -117,6 +117,11 @@ namespace sdp_projek_revisi
                     label14.Text = "Nomor Telepon/HP harus terisi";
                     validasi = false;
                 }
+                if (textBox7.Text.Length > 12)
+                {
+                    label14.Text = "Nomor Telp/HP terlalu panjang";
+                    validasi = false;
+                }
                 if (!textBox7.Text.All(char.IsNumber))
                 {
                     label14.Text = "Nomor Telp/HP tidak valid";
@@ -142,28 +147,28 @@ namespace sdp_projek_revisi
                 {
                     try
                     {
-                        String id = textBox1.Text;
-                        String nik = textBox8.Text;
-                        String nama = textBox2.Text;
-                        String telp = textBox7.Text;
-                        String alamat = textBox4.Text;
-                        String pekerjaan = textBox5.Text;
-                        String agama = textBox10.Text;
-                        String day = dateTimePicker1.Value.Day.ToString();
-                        String mon = dateTimePicker1.Value.Month.ToString();
-                        String year = dateTimePicker1.Value.Year.ToString();
-                        String jk = "L";
+                        String id = textBox1.Text.ToUpper();
+                        String nik = textBox8.Text.ToUpper();
+                        String nama = textBox2.Text.ToUpper();
+                        String telp = textBox7.Text.ToUpper();
+                        String alamat = textBox4.Text.ToUpper();
+                        String pekerjaan = textBox5.Text.ToUpper();
+                        String agama = textBox10.Text.ToUpper();
+                        String day = dateTimePicker1.Value.Day.ToString().ToUpper();
+                        String mon = dateTimePicker1.Value.Month.ToString().ToUpper();
+                        String year = dateTimePicker1.Value.Year.ToString().ToUpper();
+                        String jk = "L".ToUpper();
                         if(radioButton2.Checked == true)
                         {
-                            jk = "P";
+                            jk = "P".ToUpper();
                         }
                         else
                         {
-                            jk = "L";
+                            jk = "L".ToUpper();
                         }
-                        String golDarah = comboBox1.Text;
+                        String golDarah = comboBox1.Text.ToUpper();
 
-                        OracleCommand cmd = new OracleCommand("INSERT INTO MEMBER VALUES('"+id+"','"+nama+ "',TO_DATE(LPAD('" + day + "',2,'0')||'/'||LPAD('" + mon + "',2,'0')||'/'||LPAD('" + year + "',4,'0'),'DD/MM/YYYY'),'"+alamat+"','"+telp+"','"+golDarah+"','"+pekerjaan+"','"+agama+"','"+jk+"','"+nik+"')", mainParent.oc);
+                        OracleCommand cmd = new OracleCommand("INSERT INTO MEMBER VALUES('"+id+"','"+nama+ "',TO_DATE(LPAD('" + day + "',2,'0')||'/'||LPAD('" + mon + "',2,'0')||'/'||LPAD('" + year + "',4,'0'),'DD/MM/YYYY'),'"+alamat+"','"+telp+"','"+golDarah+"','"+pekerjaan+"','"+agama+"','"+jk+"','"+nik+"',0,0)", mainParent.oc);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Berhasil menambah member baru");
                         textBox2.Text = "";
@@ -171,6 +176,7 @@ namespace sdp_projek_revisi
                         textBox7.Text = "";
                         textBox4.Text = "";
                         textBox5.Text = "";
+                        textBox1.Text = "";
                         textBox10.Text = "";
                         comboBox1.SelectedIndex = 0;
                         radioButton1.Checked = true;
