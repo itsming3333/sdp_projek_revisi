@@ -115,13 +115,17 @@ namespace sdp_projek_revisi
                 dateTimePicker1.Value = tgllahir;
                 if(jk == "P")
                 {
+                    radioButton2.Checked = true;
+                }
+                else
+                {
                     radioButton1.Checked = true;
                 }
                 comboBox2.Text = golDarah;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                
             }
         }
         private void clearWarning()
@@ -155,6 +159,11 @@ namespace sdp_projek_revisi
                 groupBox1.Enabled = false;
                 showData();
             }
+        }
+
+        private void Button2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -62,6 +62,28 @@ namespace sdp_projek_revisi
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
         {
+            if(textBox2.Text.Length >= 2)
+            {
+                String nama = textBox2.Text;
+                if (nama.Length >= 2)
+                {
+                    String[] splitNama = nama.Split(' ');
+                    String id = "";
+                    if(splitNama.Length < 2 || splitNama[1].Length == 0)
+                    {
+                        id = splitNama[0].Substring(0, 2);
+                    }
+                    else
+                    {
+                        id = splitNama[0].Substring(0, 1) + splitNama[1].Substring(0, 1);
+                    }
+                    id = id.ToUpper();
+
+                    OracleCommand cmd = new OracleCommand("SELECT AUTO_GEN_ID_MEMBER('" + id + "') FROM DUAL", mainParent.oc);
+                    id += cmd.ExecuteScalar().ToString();
+                    textBox1.Text = id.ToUpper();
+                }
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -135,11 +157,25 @@ namespace sdp_projek_revisi
                         {
                             jk = "P";
                         }
+                        else
+                        {
+                            jk = "L";
+                        }
                         String golDarah = comboBox1.Text;
 
                         OracleCommand cmd = new OracleCommand("INSERT INTO MEMBER VALUES('"+id+"','"+nama+ "',TO_DATE(LPAD('" + day + "',2,'0')||'/'||LPAD('" + mon + "',2,'0')||'/'||LPAD('" + year + "',4,'0'),'DD/MM/YYYY'),'"+alamat+"','"+telp+"','"+golDarah+"','"+pekerjaan+"','"+agama+"','"+jk+"','"+nik+"')", mainParent.oc);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Berhasil menambah member baru");
+                        textBox2.Text = "";
+                        textBox8.Text = "";
+                        textBox7.Text = "";
+                        textBox4.Text = "";
+                        textBox5.Text = "";
+                        textBox10.Text = "";
+                        comboBox1.SelectedIndex = 0;
+                        radioButton1.Checked = true;
+                        dateTimePicker1.Value = DateTime.Now;
+                        clearWarning();
                     }
                     catch (Exception ex)
                     {
