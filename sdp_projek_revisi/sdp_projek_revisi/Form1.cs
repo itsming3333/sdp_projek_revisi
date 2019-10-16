@@ -85,6 +85,8 @@ namespace sdp_projek_revisi
 
             if (j == "kasir")
             {
+                FormWelcome frm = new FormWelcome();
+                addTab(frm);
                 btnMenu = new Button[7];
                 for(int i = 0; i<7; i++)
                 {
@@ -99,7 +101,7 @@ namespace sdp_projek_revisi
                 btnMenu[1].Text = "Register Member";btnMenu[1].Click += new_member;
                 btnMenu[2].Text = "Rawat Spesialis";
                 btnMenu[3].Text = "Rawat Jalan";
-                btnMenu[4].Text = "Rawat Inap";
+                btnMenu[4].Text = "Rawat Inap";btnMenu[4].Click += rawat_inap;
                 btnMenu[5].Text = "Donor";
                 btnMenu[6].Text = "Logout";btnMenu[6].Click += logout;
 
@@ -109,6 +111,8 @@ namespace sdp_projek_revisi
                 }
             }else if(j == "admin")
             {
+                FormWelcome frm = new FormWelcome();
+                addTab(frm);
                 btnMenu = new Button[4];
                 for (int i = 0; i < 4; i++)
                 {
@@ -130,6 +134,7 @@ namespace sdp_projek_revisi
                 }
             }
         }
+        
         public void addTab(Form frm)
         {
             TabPage tab = new TabPage(frm.Text);
@@ -148,11 +153,19 @@ namespace sdp_projek_revisi
         }
         private void new_pegawai(object sender, EventArgs e)
         {
-
+            FormNewPegawai frm = new FormNewPegawai();
+            frm.setParent(this);
+            addTab(frm);
         }
         private void data_rs(object sender, EventArgs e)
         {
 
+        }
+        private void rawat_inap(object sender, EventArgs e)
+        {
+            FormRawatInap frm = new FormRawatInap();
+            frm.setMainParent(this);
+            addTab(frm);
         }
 
         private void data_member(object sender, EventArgs e)
@@ -184,6 +197,12 @@ namespace sdp_projek_revisi
             if(tabControl1.TabPages.Count > 0)
             {
                 tabControl1.TabPages.Remove(tabControl1.SelectedTab);
+            }
+
+            if(tabControl1.TabPages.Count == 0)
+            {
+                FormWelcome frm = new FormWelcome();
+                addTab(frm);
             }
         }
     }

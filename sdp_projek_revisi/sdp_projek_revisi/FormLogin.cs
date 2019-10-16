@@ -22,6 +22,7 @@ namespace sdp_projek_revisi
         {
             parent = (Form1)this.MdiParent;
             Dock = DockStyle.Fill;
+            label4.Text = "";
         }
 
         private void Label1_Click(object sender, EventArgs e)
@@ -42,8 +43,15 @@ namespace sdp_projek_revisi
         private void Button1_Click(object sender, EventArgs e)
         {
             String jabatan = textBox1.Text;
-            parent.login_as(jabatan);
-            this.Close();
+            if (jabatan == "kasir")
+            {
+                parent.login_as(jabatan);
+                this.Close();
+            }
+            else
+            {
+                label4.Text = "ID/Password anda salah!";
+            }
         }
     }
 }

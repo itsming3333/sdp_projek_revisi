@@ -68,11 +68,23 @@
     <Compile Include="FormDataMember.Designer.cs">
       <DependentUpon>FormDataMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDataObat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataObat.Designer.cs">
+      <DependentUpon>FormDataObat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDataPegawai.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDataPegawai.Designer.cs">
       <DependentUpon>FormDataPegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIsiStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIsiStok.Designer.cs">
+      <DependentUpon>FormIsiStok.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -86,11 +98,35 @@
     <Compile Include="FormNewMember.Designer.cs">
       <DependentUpon>FormNewMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNewObat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewObat.Designer.cs">
+      <DependentUpon>FormNewObat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewPegawai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewPegawai.Designer.cs">
+      <DependentUpon>FormNewPegawai.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPengguna.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPengguna.Designer.cs">
       <DependentUpon>FormPengguna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRawatInap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRawatInap.Designer.cs">
+      <DependentUpon>FormRawatInap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWelcome.Designer.cs">
+      <DependentUpon>FormWelcome.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,8 +139,14 @@
     <EmbeddedResource Include="FormDataMember.resx">
       <DependentUpon>FormDataMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDataObat.resx">
+      <DependentUpon>FormDataObat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDataPegawai.resx">
       <DependentUpon>FormDataPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIsiStok.resx">
+      <DependentUpon>FormIsiStok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -112,8 +154,20 @@
     <EmbeddedResource Include="FormNewMember.resx">
       <DependentUpon>FormNewMember.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormNewObat.resx">
+      <DependentUpon>FormNewObat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPegawai.resx">
+      <DependentUpon>FormNewPegawai.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPengguna.resx">
       <DependentUpon>FormPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRawatInap.resx">
+      <DependentUpon>FormRawatInap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWelcome.resx">
+      <DependentUpon>FormWelcome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
