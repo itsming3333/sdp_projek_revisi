@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace sdp_projek_revisi
 {
     public partial class Form1 : Form
     {
+        public OracleConnection oc;
         public Form curForm = null;
         public Button[] btnMenu;
         public Form1()
@@ -19,6 +21,18 @@ namespace sdp_projek_revisi
             InitializeComponent();
             tabControl1.Hide();
             button1.Hide();
+
+            //INISIALISASI CONNECTION
+            try{
+                oc = new OracleConnection("user id=n217116635;password=217116635;data source = orcl");
+                oc.Open();
+                MessageBox.Show("Connection Open Ming");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fail Ivan : " + ex.Message);
+                //TAMBAH KONEKSI LAINNYA
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -97,12 +111,14 @@ namespace sdp_projek_revisi
         private void data_member(object sender, EventArgs e)
         {
             FormDataMember frm = new FormDataMember();
+            frm.setMainParent(this);
             addTab(frm);
         }
 
         private void new_member(object sender, EventArgs e)
         {
             FormNewMember frm = new FormNewMember();
+            frm.setParent(this);
             addTab(frm);
         }
         private void logout(object sender, EventArgs e)
