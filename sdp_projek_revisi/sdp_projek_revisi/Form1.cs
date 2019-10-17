@@ -177,7 +177,9 @@ namespace sdp_projek_revisi
         }
         private void data_rs(object sender, EventArgs e)
         {
-
+            FormDataRs frm = new FormDataRs();
+            frm.setParent(this);
+            addTab(frm);
         }
         private void rawat_inap(object sender, EventArgs e)
         {
