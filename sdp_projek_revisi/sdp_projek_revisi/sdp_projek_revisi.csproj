@@ -122,6 +122,12 @@
     <Compile Include="FormRawatInap.Designer.cs">
       <DependentUpon>FormRawatInap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRawatJalan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRawatJalan.Designer.cs">
+      <DependentUpon>FormRawatJalan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRawatInap.resx">
       <DependentUpon>FormRawatInap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRawatJalan.resx">
+      <DependentUpon>FormRawatJalan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
