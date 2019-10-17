@@ -156,7 +156,7 @@ namespace sdp_projek_revisi
                 btnMenu[1].Text = "Perawatan Jalan";
                 btnMenu[2].Text = "Perawatan Spesialis";
                 btnMenu[3].Text = "Tindakan Donor";btnMenu[3].Click += tindakan_donor;
-                btnMenu[4].Text = "Detail Perawatan";
+                btnMenu[4].Text = "Detail Perawatan";btnMenu[4].Click += detail_trans;
                 btnMenu[5].Text = "Logout"; btnMenu[5].Click += logout;
 
                 for (int i = 0; i < 6; i++)
@@ -179,6 +179,12 @@ namespace sdp_projek_revisi
         private void tindakan_donor(object sender, EventArgs e)
         {
             FormTindakanDonor frm = new FormTindakanDonor();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void detail_trans(object sender, EventArgs e)
+        {
+            FormDetailPerawatan frm = new FormDetailPerawatan();
             frm.setParent(this);
             addTab(frm);
         }

@@ -7,14 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oracle.DataAccess.Client;
 
 namespace sdp_projek_revisi
 {
-    public partial class FormDetailPerawatan : Form
+    public partial class FormPerawatanJalan : Form
     {
-        Form1 mainParent;
-        public FormDetailPerawatan()
+        public FormPerawatanJalan()
         {
             InitializeComponent();
         }
@@ -24,20 +22,11 @@ namespace sdp_projek_revisi
             label2.Text = DateTime.Now.ToString();
         }
 
-        private void FormDetailPerawatan_Load(object sender, EventArgs e)
+        private void FormPerawatanJalan_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
             label2.Text = DateTime.Now.ToString();
             timer1.Start();
-        }
-
-        private void Label18_Click(object sender, EventArgs e)
-        {
-
-        }
-        public void setParent(Form1 parent)
-        {
-            this.mainParent = parent;
         }
     }
 }
