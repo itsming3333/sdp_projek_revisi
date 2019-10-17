@@ -43,7 +43,7 @@ namespace sdp_projek_revisi
         private void Button1_Click(object sender, EventArgs e)
         {
             String jabatan = textBox1.Text;
-            if (jabatan == "kasir")
+            if (jabatan == "penerima_tamu" || jabatan == "dokter" || jabatan == "suster")
             {
                 parent.login_as(jabatan);
                 this.Close();

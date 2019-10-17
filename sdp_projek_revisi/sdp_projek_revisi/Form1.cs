@@ -16,6 +16,7 @@ namespace sdp_projek_revisi
         public OracleConnection oc;
         public Form curForm = null;
         public Button[] btnMenu;
+        public String id_login = "";
         public String passAdmin = "sdp2019";
         public Form1()
         {
@@ -76,6 +77,11 @@ namespace sdp_projek_revisi
             curForm = fp;
         }
 
+        public void setLogin(String id)
+        {
+            this.id_login = id;
+        }
+
         public void login_as(String j)
         {
             tabControl1.Size = new Size(1150, 600);
@@ -83,7 +89,7 @@ namespace sdp_projek_revisi
             button1.Show();
             tabControl1.Show();
 
-            if (j == "kasir")
+            if (j == "penerima_tamu")
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
@@ -132,6 +138,31 @@ namespace sdp_projek_revisi
                 {
                     Controls.Add(btnMenu[i]);
                 }
+            }else if(j == "dokter" || j == "suster")
+            {
+                FormWelcome frm = new FormWelcome();
+                addTab(frm);
+                btnMenu = new Button[6];
+                for (int i = 0; i < 6; i++)
+                {
+                    btnMenu[i] = new Button();
+                    btnMenu[i].Height = 100;
+                    btnMenu[i].Width = 100;
+                    btnMenu[i].BackColor = Color.LightBlue;
+                    btnMenu[i].Location = new Point(i * 100 + 15, 15);
+                    btnMenu[i].Font = new Font("MS Reference Sans Serif", 10);
+                }
+                btnMenu[0].Text = "Perawatan Pasien Inap";btnMenu[0].Click += perawatan_inap;
+                btnMenu[1].Text = "Perawatan Jalan";
+                btnMenu[2].Text = "Perawatan Spesialis";
+                btnMenu[3].Text = "Tindakan Donor";btnMenu[3].Click += tindakan_donor;
+                btnMenu[4].Text = "Detail Perawatan";
+                btnMenu[5].Text = "Logout"; btnMenu[5].Click += logout;
+
+                for (int i = 0; i < 6; i++)
+                {
+                    Controls.Add(btnMenu[i]);
+                }
             }
         }
         
@@ -144,6 +175,18 @@ namespace sdp_projek_revisi
             frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
             tabControl1.SelectedTab = tab;
             tabControl1.TabPages.Add(tab);
+        }
+        private void tindakan_donor(object sender, EventArgs e)
+        {
+            FormTindakanDonor frm = new FormTindakanDonor();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void perawatan_inap(object sender, EventArgs e)
+        {
+            FormPerawatanInap frm = new FormPerawatanInap();
+            frm.setParent(this);
+            addTab(frm);
         }
         private void rawat_jalan(object sender, EventArgs e)
         {

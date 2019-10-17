@@ -86,6 +86,12 @@
     <Compile Include="FormDataRs.Designer.cs">
       <DependentUpon>FormDataRs.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDetailPerawatan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailPerawatan.Designer.cs">
+      <DependentUpon>FormDetailPerawatan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDonor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     <Compile Include="FormPengguna.Designer.cs">
       <DependentUpon>FormPengguna.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPerawatanInap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerawatanInap.Designer.cs">
+      <DependentUpon>FormPerawatanInap.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRawatInap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +157,12 @@
     </Compile>
     <Compile Include="FormRawatSpesialis.Designer.cs">
       <DependentUpon>FormRawatSpesialis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTindakanDonor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTindakanDonor.Designer.cs">
+      <DependentUpon>FormTindakanDonor.cs</DependentUpon>
     </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
@@ -172,6 +190,9 @@
     <EmbeddedResource Include="FormDataRs.resx">
       <DependentUpon>FormDataRs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailPerawatan.resx">
+      <DependentUpon>FormDetailPerawatan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDonor.resx">
       <DependentUpon>FormDonor.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +214,9 @@
     <EmbeddedResource Include="FormPengguna.resx">
       <DependentUpon>FormPengguna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormPerawatanInap.resx">
+      <DependentUpon>FormPerawatanInap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRawatInap.resx">
       <DependentUpon>FormRawatInap.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRawatSpesialis.resx">
       <DependentUpon>FormRawatSpesialis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTindakanDonor.resx">
+      <DependentUpon>FormTindakanDonor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
