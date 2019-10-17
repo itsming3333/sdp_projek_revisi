@@ -85,7 +85,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(411, 67);
+            this.label2.Location = new System.Drawing.Point(400, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 22);
+            this.label1.Location = new System.Drawing.Point(29, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(311, 60);
             this.label1.TabIndex = 4;
@@ -158,7 +158,7 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(50, 94);
+            this.groupBox1.Location = new System.Drawing.Point(39, 90);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(412, 472);
             this.groupBox1.TabIndex = 9;
@@ -322,7 +322,7 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Location = new System.Drawing.Point(468, 94);
+            this.groupBox2.Location = new System.Drawing.Point(457, 90);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(318, 472);
             this.groupBox2.TabIndex = 53;
@@ -436,7 +436,7 @@
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.textBox4);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Location = new System.Drawing.Point(792, 94);
+            this.groupBox3.Location = new System.Drawing.Point(781, 90);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(316, 217);
             this.groupBox3.TabIndex = 54;
@@ -502,7 +502,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1033, 331);
+            this.button2.Location = new System.Drawing.Point(1022, 327);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 55;
@@ -511,7 +511,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(952, 331);
+            this.button3.Location = new System.Drawing.Point(941, 327);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 56;

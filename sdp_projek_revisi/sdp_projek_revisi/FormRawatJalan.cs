@@ -19,6 +19,10 @@ namespace sdp_projek_revisi
         {
             InitializeComponent();
         }
+        public void setParent(Form1 parent)
+        {
+            this.mainParent = parent;
+        }
 
         private void FormRawatJalan_Load(object sender, EventArgs e)
         {
@@ -26,6 +30,7 @@ namespace sdp_projek_revisi
             label2.Text = DateTime.Now.ToString();
             timer1.Start();
             comboBox1.SelectedIndex = 0;
+            showData();
         }
 
         private void showData()
@@ -33,10 +38,12 @@ namespace sdp_projek_revisi
             OracleDataAdapter oda = new OracleDataAdapter("SELECT ID_MEMBER AS ID, NAMA_MEMBER AS NAMA FROM MEMBER", mainParent.oc);
             DataTable member = new DataTable();
             oda.Fill(member);
+            dataGridView1.DataSource = member;
 
-            oda = new OracleDataAdapter("SELECT TO_CHAR(T.TGL_KELUAR,'DD/MM/YYYY') AS KELUAR,  FROM TRANSAKSI T,DTRANS_PERAWATAN_INAP DP, PERAWATAN P WHERE T.ID_MEMBER='"+id_selected_member+"' AND T.ID_TRANS = DP.ID_TRANS AND DP.ID_PERAWATAN = P.ID_PERAWATAN AND DP.KETERANGAN_CHECKUP='UTAMA'", mainParent.oc);
+            oda = new OracleDataAdapter("SELECT TO_CHAR(T.TGL_KELUAR,'DD/MM/YYYY') AS KELUAR, P.NAMA_PERAWATAN AS UTAMA FROM TRANSAKSI T,DTRANS_PERAWATAN_INAP DP, PERAWATAN P WHERE T.ID_MEMBER='"+id_selected_member+"' AND T.ID_TRANS = DP.ID_TRANS AND DP.ID_PERAWATAN = P.ID_PERAWATAN AND DP.KETERANGAN_CHECKUP='UTAMA'", mainParent.oc);
             DataTable transaksi = new DataTable();
             oda.Fill(transaksi);
+            dataGridView2.DataSource = transaksi;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)

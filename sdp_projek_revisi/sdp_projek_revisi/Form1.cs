@@ -100,7 +100,7 @@ namespace sdp_projek_revisi
                 btnMenu[0].Text = "Data Member";btnMenu[0].Click += data_member;
                 btnMenu[1].Text = "Register Member";btnMenu[1].Click += new_member;
                 btnMenu[2].Text = "Rawat Spesialis";
-                btnMenu[3].Text = "Rawat Jalan";
+                btnMenu[3].Text = "Rawat Jalan";btnMenu[3].Click += rawat_jalan;
                 btnMenu[4].Text = "Rawat Inap";btnMenu[4].Click += rawat_inap;
                 btnMenu[5].Text = "Donor";
                 btnMenu[6].Text = "Logout";btnMenu[6].Click += logout;
@@ -144,6 +144,12 @@ namespace sdp_projek_revisi
             frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
             tabControl1.SelectedTab = tab;
             tabControl1.TabPages.Add(tab);
+        }
+        private void rawat_jalan(object sender, EventArgs e)
+        {
+            FormRawatJalan frm = new FormRawatJalan();
+            frm.setParent(this);
+            addTab(frm);
         }
         private void data_pegawai(object sender, EventArgs e)
         {
