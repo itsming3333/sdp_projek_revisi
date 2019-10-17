@@ -406,7 +406,7 @@
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormNewMember";
-            this.Text = "FormNewMember";
+            this.Text = "Register Member";
             this.Load += new System.EventHandler(this.FormNewMember_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

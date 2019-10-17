@@ -80,6 +80,12 @@
     <Compile Include="FormDataPegawai.Designer.cs">
       <DependentUpon>FormDataPegawai.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDonor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDonor.Designer.cs">
+      <DependentUpon>FormDonor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormIsiStok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     <Compile Include="FormRawatJalan.Designer.cs">
       <DependentUpon>FormRawatJalan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRawatSpesialis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRawatSpesialis.Designer.cs">
+      <DependentUpon>FormRawatSpesialis.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDataPegawai.resx">
       <DependentUpon>FormDataPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDonor.resx">
+      <DependentUpon>FormDonor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormIsiStok.resx">
       <DependentUpon>FormIsiStok.cs</DependentUpon>
@@ -174,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRawatJalan.resx">
       <DependentUpon>FormRawatJalan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRawatSpesialis.resx">
+      <DependentUpon>FormRawatSpesialis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>

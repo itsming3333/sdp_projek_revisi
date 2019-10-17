@@ -99,10 +99,10 @@ namespace sdp_projek_revisi
                 }
                 btnMenu[0].Text = "Data Member";btnMenu[0].Click += data_member;
                 btnMenu[1].Text = "Register Member";btnMenu[1].Click += new_member;
-                btnMenu[2].Text = "Rawat Spesialis";
+                btnMenu[2].Text = "Rawat Spesialis";btnMenu[2].Click += rawat_spesialis;
                 btnMenu[3].Text = "Rawat Jalan";btnMenu[3].Click += rawat_jalan;
                 btnMenu[4].Text = "Rawat Inap";btnMenu[4].Click += rawat_inap;
-                btnMenu[5].Text = "Donor";
+                btnMenu[5].Text = "Donor";btnMenu[5].Click += donor;
                 btnMenu[6].Text = "Logout";btnMenu[6].Click += logout;
 
                 for (int i = 0; i < 7; i++)
@@ -160,6 +160,18 @@ namespace sdp_projek_revisi
         private void new_pegawai(object sender, EventArgs e)
         {
             FormNewPegawai frm = new FormNewPegawai();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void rawat_spesialis(object sender, EventArgs e)
+        {
+            FormRawatSpesialis frm = new FormRawatSpesialis();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void donor(object sender, EventArgs e)
+        {
+            FormDonor frm = new FormDonor();
             frm.setParent(this);
             addTab(frm);
         }

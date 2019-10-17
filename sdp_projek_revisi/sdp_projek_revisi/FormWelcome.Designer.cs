@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +44,15 @@
             this.panel1.Size = new System.Drawing.Size(778, 298);
             this.panel1.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(177, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(420, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Tekan tombol diatas sesuai kriteria untuk menambahkan halaman kerja";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -53,15 +62,6 @@
             this.label1.Size = new System.Drawing.Size(730, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "SELAMAT DATANG DI KIMIA FARMING";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(177, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(420, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Tekan tombol diatas sesuai kriteria untuk menambahkan halaman kerja";
             // 
             // FormWelcome
             // 
@@ -73,7 +73,7 @@
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormWelcome";
-            this.Text = "FormWelcome";
+            this.Text = "Welcome";
             this.Load += new System.EventHandler(this.FormWelcome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
