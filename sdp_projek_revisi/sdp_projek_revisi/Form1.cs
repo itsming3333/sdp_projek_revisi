@@ -93,8 +93,8 @@ namespace sdp_projek_revisi
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
-                btnMenu = new Button[7];
-                for(int i = 0; i<7; i++)
+                btnMenu = new Button[8];
+                for(int i = 0; i<8; i++)
                 {
                     btnMenu[i] = new Button();
                     btnMenu[i].Height = 100;
@@ -109,9 +109,10 @@ namespace sdp_projek_revisi
                 btnMenu[3].Text = "Rawat Jalan";btnMenu[3].Click += rawat_jalan;
                 btnMenu[4].Text = "Rawat Inap";btnMenu[4].Click += rawat_inap;
                 btnMenu[5].Text = "Donor";btnMenu[5].Click += donor;
-                btnMenu[6].Text = "Logout";btnMenu[6].Click += logout;
+                btnMenu[6].Text = "Absensi";btnMenu[6].Click += absensi_tugas;
+                btnMenu[7].Text = "Logout"; btnMenu[7].Click += logout;
 
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 8; i++)
                 {
                     Controls.Add(btnMenu[i]);
                 }
@@ -119,8 +120,8 @@ namespace sdp_projek_revisi
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
-                btnMenu = new Button[4];
-                for (int i = 0; i < 4; i++)
+                btnMenu = new Button[5];
+                for (int i = 0; i < 5; i++)
                 {
                     btnMenu[i] = new Button();
                     btnMenu[i].Height = 100;
@@ -132,9 +133,10 @@ namespace sdp_projek_revisi
                 btnMenu[0].Text = "Data Pegawai"; btnMenu[0].Click += data_pegawai;
                 btnMenu[1].Text = "Register Pegawai"; btnMenu[1].Click += new_pegawai;
                 btnMenu[2].Text = "Admin Rumah Sakit"; btnMenu[2].Click += data_rs;
-                btnMenu[3].Text = "Logout"; btnMenu[3].Click += logout;
+                btnMenu[3].Text = "Laporan";
+                btnMenu[4].Text = "Logout"; btnMenu[4].Click += logout;
 
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     Controls.Add(btnMenu[i]);
                 }
@@ -142,8 +144,8 @@ namespace sdp_projek_revisi
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
-                btnMenu = new Button[6];
-                for (int i = 0; i < 6; i++)
+                btnMenu = new Button[7];
+                for (int i = 0; i < 7; i++)
                 {
                     btnMenu[i] = new Button();
                     btnMenu[i].Height = 100;
@@ -157,9 +159,10 @@ namespace sdp_projek_revisi
                 btnMenu[2].Text = "Perawatan Spesialis"; btnMenu[2].Click += perawatan_checkup;
                 btnMenu[3].Text = "Tindakan Donor";btnMenu[3].Click += tindakan_donor;
                 btnMenu[4].Text = "Detail Perawatan";btnMenu[4].Click += detail_trans;
-                btnMenu[5].Text = "Logout"; btnMenu[5].Click += logout;
+                btnMenu[5].Text = "Absensi"; btnMenu[5].Click += absensi_tugas;
+                btnMenu[6].Text = "Logout"; btnMenu[6].Click += logout;
 
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     Controls.Add(btnMenu[i]);
                 }
@@ -175,6 +178,12 @@ namespace sdp_projek_revisi
             frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
             tabControl1.SelectedTab = tab;
             tabControl1.TabPages.Add(tab);
+        }
+        private void absensi_tugas(object sender, EventArgs e)
+        {
+            FormAbsensi frm = new FormAbsensi();
+            frm.setParent(this);
+            addTab(frm);
         }
         private void perawatan_jalan(object sender, EventArgs e)
         {
