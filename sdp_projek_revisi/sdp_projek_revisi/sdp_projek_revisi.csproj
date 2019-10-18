@@ -182,6 +182,12 @@
     <Compile Include="FormTindakanDonor.Designer.cs">
       <DependentUpon>FormTindakanDonor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTransaksiObat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTransaksiObat.Designer.cs">
+      <DependentUpon>FormTransaksiObat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormTindakanDonor.resx">
       <DependentUpon>FormTindakanDonor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTransaksiObat.resx">
+      <DependentUpon>FormTransaksiObat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>

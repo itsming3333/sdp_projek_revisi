@@ -166,6 +166,28 @@ namespace sdp_projek_revisi
                 {
                     Controls.Add(btnMenu[i]);
                 }
+            }else if(j == "apoteker")
+            {
+                FormWelcome frm = new FormWelcome();
+                addTab(frm);
+                btnMenu = new Button[3];
+                for (int i = 0; i < 3; i++)
+                {
+                    btnMenu[i] = new Button();
+                    btnMenu[i].Height = 100;
+                    btnMenu[i].Width = 100;
+                    btnMenu[i].BackColor = Color.LightBlue;
+                    btnMenu[i].Location = new Point(i * 100 + 15, 15);
+                    btnMenu[i].Font = new Font("MS Reference Sans Serif", 10);
+                }
+                btnMenu[0].Text = "Pengambilan Obat"; btnMenu[0].Click += pengambilan_obat;
+                btnMenu[1].Text = "Absensi"; btnMenu[1].Click += absensi_tugas;
+                btnMenu[2].Text = "Logout"; btnMenu[2].Click += logout;
+
+                for (int i = 0; i < 3; i++)
+                {
+                    Controls.Add(btnMenu[i]);
+                }
             }
         }
         
@@ -188,6 +210,12 @@ namespace sdp_projek_revisi
         private void perawatan_jalan(object sender, EventArgs e)
         {
             FormPerawatanJalan frm = new FormPerawatanJalan();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void pengambilan_obat(object sender, EventArgs e)
+        {
+            FormTransaksiObat frm = new FormTransaksiObat();
             frm.setParent(this);
             addTab(frm);
         }
