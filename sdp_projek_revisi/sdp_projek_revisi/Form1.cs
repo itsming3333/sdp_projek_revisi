@@ -153,8 +153,8 @@ namespace sdp_projek_revisi
                     btnMenu[i].Font = new Font("MS Reference Sans Serif", 10);
                 }
                 btnMenu[0].Text = "Perawatan Pasien Inap";btnMenu[0].Click += perawatan_inap;
-                btnMenu[1].Text = "Perawatan Jalan";
-                btnMenu[2].Text = "Perawatan Spesialis";
+                btnMenu[1].Text = "Perawatan Jalan"; btnMenu[1].Click += perawatan_jalan;
+                btnMenu[2].Text = "Perawatan Spesialis"; btnMenu[2].Click += perawatan_checkup;
                 btnMenu[3].Text = "Tindakan Donor";btnMenu[3].Click += tindakan_donor;
                 btnMenu[4].Text = "Detail Perawatan";btnMenu[4].Click += detail_trans;
                 btnMenu[5].Text = "Logout"; btnMenu[5].Click += logout;
@@ -175,6 +175,18 @@ namespace sdp_projek_revisi
             frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
             tabControl1.SelectedTab = tab;
             tabControl1.TabPages.Add(tab);
+        }
+        private void perawatan_jalan(object sender, EventArgs e)
+        {
+            FormPerawatanJalan frm = new FormPerawatanJalan();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void perawatan_checkup(object sender, EventArgs e)
+        {
+            FormPerawatanCheckup frm = new FormPerawatanCheckup();
+            frm.setParent(this);
+            addTab(frm);
         }
         private void tindakan_donor(object sender, EventArgs e)
         {

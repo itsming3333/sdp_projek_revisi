@@ -134,6 +134,12 @@
     <Compile Include="FormPengguna.Designer.cs">
       <DependentUpon>FormPengguna.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPerawatanCheckup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPerawatanCheckup.Designer.cs">
+      <DependentUpon>FormPerawatanCheckup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPerawatanInap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPengguna.resx">
       <DependentUpon>FormPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPerawatanCheckup.resx">
+      <DependentUpon>FormPerawatanCheckup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPerawatanInap.resx">
       <DependentUpon>FormPerawatanInap.cs</DependentUpon>

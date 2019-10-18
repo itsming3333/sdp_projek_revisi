@@ -44,6 +44,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -68,14 +70,17 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,6 +88,8 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -244,6 +251,22 @@
             this.groupBox3.Text = "Supply";
             this.groupBox3.Enter += new System.EventHandler(this.GroupBox3_Enter);
             // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(105, 53);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(249, 21);
+            this.textBox5.TabIndex = 24;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(18, 56);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 15);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "Cari Nama :";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -324,7 +347,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(687, 189);
+            this.checkBox3.Location = new System.Drawing.Point(773, 189);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(175, 19);
             this.checkBox3.TabIndex = 14;
@@ -343,7 +366,7 @@
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Location = new System.Drawing.Point(773, 212);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(317, 330);
+            this.groupBox4.Size = new System.Drawing.Size(327, 330);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ruang";
@@ -429,7 +452,7 @@
             this.textBox1.Location = new System.Drawing.Point(364, 120);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 59);
+            this.textBox1.Size = new System.Drawing.Size(186, 59);
             this.textBox1.TabIndex = 15;
             // 
             // button1
@@ -452,7 +475,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(594, 120);
+            this.textBox2.Location = new System.Drawing.Point(556, 120);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(226, 59);
@@ -461,7 +484,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(591, 102);
+            this.label12.Location = new System.Drawing.Point(553, 102);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(156, 15);
             this.label12.TabIndex = 18;
@@ -469,39 +492,25 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.numericUpDown2);
+            this.groupBox5.Controls.Add(this.numericUpDown1);
             this.groupBox5.Controls.Add(this.textBox3);
             this.groupBox5.Controls.Add(this.radioButton3);
+            this.groupBox5.Controls.Add(this.comboBox4);
+            this.groupBox5.Controls.Add(this.radioButton2);
             this.groupBox5.Controls.Add(this.radioButton1);
-            this.groupBox5.Location = new System.Drawing.Point(826, 102);
+            this.groupBox5.Location = new System.Drawing.Point(788, 96);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(258, 77);
+            this.groupBox5.Size = new System.Drawing.Size(312, 87);
             this.groupBox5.TabIndex = 20;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Intruksi Lanjutan";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(82, 46);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 21);
-            this.textBox3.TabIndex = 3;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 46);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(69, 19);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Lainnya";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.RadioButton3_CheckedChanged);
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 18);
+            this.radioButton1.Location = new System.Drawing.Point(6, 17);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(85, 19);
             this.radioButton1.TabIndex = 0;
@@ -534,21 +543,66 @@
             this.button5.Text = "OK";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // comboBox4
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(18, 56);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 15);
-            this.label15.TabIndex = 22;
-            this.label15.Text = "Cari Nama :";
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(114, 35);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(101, 23);
+            this.comboBox4.TabIndex = 27;
             // 
-            // textBox5
+            // radioButton2
             // 
-            this.textBox5.Location = new System.Drawing.Point(105, 53);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(249, 21);
-            this.textBox5.TabIndex = 24;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 39);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(102, 19);
+            this.radioButton2.TabIndex = 26;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Tindak Lanjut";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(6, 62);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(69, 19);
+            this.radioButton3.TabIndex = 28;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Lainnya";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(81, 61);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(225, 21);
+            this.textBox3.TabIndex = 24;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(221, 37);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(35, 21);
+            this.numericUpDown1.TabIndex = 29;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(271, 37);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(35, 21);
+            this.numericUpDown2.TabIndex = 30;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(258, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(12, 15);
+            this.label16.TabIndex = 24;
+            this.label16.Text = ":";
             // 
             // FormPerawatanInap
             // 
@@ -592,6 +646,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,12 +695,17 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
