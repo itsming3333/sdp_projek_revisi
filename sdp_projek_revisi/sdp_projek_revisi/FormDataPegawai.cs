@@ -35,5 +35,10 @@ namespace sdp_projek_revisi
         {
             label2.Text = DateTime.Now.ToString();
         }
+
+        private void Label25_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
