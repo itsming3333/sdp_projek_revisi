@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 
 namespace sdp_projek_revisi
 {
@@ -42,9 +43,16 @@ namespace sdp_projek_revisi
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            String jabatan = textBox1.Text;
-            if (jabatan == "penerima_tamu" || jabatan == "dokter" || jabatan == "suster")
+            String id = textBox1.Text.ToUpper();
+            String password = textBox2.Text;
+            String jabatan = "";
+            OracleDataAdapter oda = new OracleDataAdapter("SELECT J.NAMA_JABATAN FROM PEGAWAI M, JABATAN J WHERE M.ID_JABATAN=J.ID_JABATAN AND M.ID_PEGAWAI='"+id+"' AND M.PASSWORD_PEGAWAI='"+password+"'", parent.oc);
+            DataTable selectedMember = new DataTable();
+            oda.Fill(selectedMember);
+
+            if (selectedMember.Rows.Count > 0)
             {
+                jabatan = selectedMember.Rows[0].Field<String>(0);
                 parent.login_as(jabatan);
                 this.Close();
             }

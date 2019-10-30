@@ -89,7 +89,7 @@ namespace sdp_projek_revisi
             button1.Show();
             tabControl1.Show();
 
-            if (j == "penerima_tamu")
+            if (j == "RESEPSIONIS")
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
@@ -116,7 +116,7 @@ namespace sdp_projek_revisi
                 {
                     Controls.Add(btnMenu[i]);
                 }
-            }else if(j == "admin")
+            }else if(j == "ADMIN")
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
@@ -140,7 +140,7 @@ namespace sdp_projek_revisi
                 {
                     Controls.Add(btnMenu[i]);
                 }
-            }else if(j == "dokter" || j == "suster")
+            }else if(j == "DOKTER" || j == "SUSTER")
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
@@ -166,7 +166,7 @@ namespace sdp_projek_revisi
                 {
                     Controls.Add(btnMenu[i]);
                 }
-            }else if(j == "apoteker")
+            }else if(j == "APOTEKER")
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
