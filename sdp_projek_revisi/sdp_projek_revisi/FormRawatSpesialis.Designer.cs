@@ -287,6 +287,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(398, 202);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // textBox1
             // 
@@ -337,9 +338,9 @@
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(159, 435);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(86, 15);
+            this.label32.Size = new System.Drawing.Size(12, 15);
             this.label32.TabIndex = 67;
-            this.label32.Text = "00:00 - 00:00";
+            this.label32.Text = "-";
             // 
             // label20
             // 
@@ -347,27 +348,27 @@
             this.label20.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(50, 420);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 24);
+            this.label20.Size = new System.Drawing.Size(20, 24);
             this.label20.TabIndex = 59;
-            this.label20.Text = "303";
+            this.label20.Text = "-";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Location = new System.Drawing.Point(159, 420);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(127, 15);
+            this.label31.Size = new System.Drawing.Size(12, 15);
             this.label31.TabIndex = 66;
-            this.label31.Text = "Spesialis Endomologi";
+            this.label31.Text = "-";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(159, 405);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(86, 15);
+            this.label30.Size = new System.Drawing.Size(12, 15);
             this.label30.TabIndex = 65;
-            this.label30.Text = "Dr. Hanif Test";
+            this.label30.Text = "-";
             // 
             // label19
             // 
@@ -388,6 +389,7 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(306, 90);
             this.dataGridView2.TabIndex = 52;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
             // 
             // comboBox2
             // 
@@ -403,6 +405,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(217, 23);
             this.comboBox2.TabIndex = 57;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -472,6 +475,7 @@
             this.button1.TabIndex = 59;
             this.button1.Text = "Isi dengan data pribadi";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label25
             // 

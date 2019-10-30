@@ -115,6 +115,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(398, 202);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // textBox1
             // 
@@ -335,18 +336,18 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(139, 418);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(106, 15);
+            this.label22.Size = new System.Drawing.Size(12, 15);
             this.label22.TabIndex = 61;
-            this.label22.Text = "Rp. 1050000/hari";
+            this.label22.Text = "-";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Location = new System.Drawing.Point(139, 403);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(124, 15);
+            this.label21.Size = new System.Drawing.Size(12, 15);
             this.label21.TabIndex = 60;
-            this.label21.Text = "Jenis Personal Small";
+            this.label21.Text = "-";
             // 
             // label20
             // 
@@ -354,9 +355,9 @@
             this.label20.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(50, 420);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 24);
+            this.label20.Size = new System.Drawing.Size(20, 24);
             this.label20.TabIndex = 59;
-            this.label20.Text = "303";
+            this.label20.Text = "-";
             // 
             // label19
             // 
@@ -377,6 +378,7 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(306, 90);
             this.dataGridView2.TabIndex = 52;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
             // 
             // comboBox2
             // 
@@ -392,6 +394,8 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(225, 23);
             this.comboBox2.TabIndex = 57;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
+            this.comboBox2.TextUpdate += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -451,6 +455,7 @@
             this.button1.TabIndex = 59;
             this.button1.Text = "Isi dengan data pribadi";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label25
             // 
@@ -508,6 +513,7 @@
             this.button2.TabIndex = 55;
             this.button2.Text = "Next";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button3
             // 
@@ -517,6 +523,7 @@
             this.button3.TabIndex = 56;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // FormRawatInap
             // 
