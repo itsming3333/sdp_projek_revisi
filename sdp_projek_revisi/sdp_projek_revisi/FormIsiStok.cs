@@ -28,5 +28,10 @@ namespace sdp_projek_revisi
             label2.Text = DateTime.Now.ToString();
             timer1.Start();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
