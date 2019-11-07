@@ -54,6 +54,7 @@ namespace sdp_projek_revisi
             {
                 jabatan = selectedMember.Rows[0].Field<String>(0);
                 parent.login_as(jabatan);
+                parent.id_login = id;
                 this.Close();
             }
             else
