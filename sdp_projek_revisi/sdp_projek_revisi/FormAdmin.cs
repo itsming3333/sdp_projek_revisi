@@ -35,7 +35,7 @@ namespace sdp_projek_revisi
         {
             if(textBox1.Text == parent.passAdmin)
             {
-                parent.login_as("admin");
+                parent.login_as("ADMIN");
                 this.Close();
             }
             else

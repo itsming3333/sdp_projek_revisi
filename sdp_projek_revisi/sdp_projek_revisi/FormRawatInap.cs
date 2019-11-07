@@ -272,5 +272,10 @@ namespace sdp_projek_revisi
         {
             refresh();
         }
+
+        private void NumericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

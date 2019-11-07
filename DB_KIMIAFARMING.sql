@@ -66,9 +66,13 @@ NAMA_SUPPLY VARCHAR2(30) NOT NULL,
 DESKRIPSI_SUPPLY VARCHAR2(100) NOT NULL,
 HARGA_SUPPLY NUMBER(12,0) NOT NULL,
 JENIS_SUPPLY VARCHAR2(30) NOT NULL,
-EXPIRED DATE NULL,
 SATUAN VARCHAR2(20) NOT NULL,
 PRIMARY KEY (ID_SUPPLY) 
+);
+CREATE TABLE DSUPPLY(
+KODE_BARANG VARCHAR2(30) NOT NULL,
+ID_SUPPLY VARCHAR2(5) NOT NULL,
+EXPIRED DATE NULL	
 );
 CREATE TABLE TRANSAKSI (
 ID_TRANS VARCHAR2(12) NOT NULL,
@@ -264,6 +268,18 @@ is
     hasil varchar2(30);
 begin
     select LPAD(count(ID_TRANS),4,'0') into hasil from TRANSAKSI where ID_TRANS like '%'||a||'%';
+    return hasil;
+end;
+/
+show err;
+
+--3
+create or replace function AUTO_GEN_ID_DONOR(a varchar2)
+return varchar2
+is
+    hasil varchar2(30);
+begin
+    select LPAD(count(ID_DONOR),3,'0') into hasil from DONOR where ID_DONOR like '%'||a||'%';
     return hasil;
 end;
 /

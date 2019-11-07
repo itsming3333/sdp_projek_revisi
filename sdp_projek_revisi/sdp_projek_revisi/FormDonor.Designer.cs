@@ -66,7 +66,6 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label20 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -75,6 +74,12 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.label27 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -83,9 +88,10 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -144,6 +150,7 @@
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(48, 21);
             this.numericUpDown2.TabIndex = 51;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.NumericUpDown2_ValueChanged);
             // 
             // numericUpDown1
             // 
@@ -151,6 +158,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(48, 21);
             this.numericUpDown1.TabIndex = 50;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // label15
             // 
@@ -295,6 +303,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(398, 202);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // textBox1
             // 
@@ -305,6 +314,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.groupBox5);
+            this.groupBox2.Controls.Add(this.label27);
+            this.groupBox2.Controls.Add(this.numericUpDown4);
+            this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.label24);
@@ -314,7 +327,6 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.numericUpDown4);
             this.groupBox2.Controls.Add(this.numericUpDown3);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label18);
@@ -324,7 +336,7 @@
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(456, 85);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(662, 390);
+            this.groupBox2.Size = new System.Drawing.Size(662, 402);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kondisi Donor";
@@ -410,6 +422,7 @@
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(47, 21);
             this.numericUpDown5.TabIndex = 64;
+            this.numericUpDown5.ValueChanged += new System.EventHandler(this.NumericUpDown5_ValueChanged);
             // 
             // label22
             // 
@@ -426,7 +439,7 @@
             this.groupBox3.Controls.Add(this.radioButton1);
             this.groupBox3.Location = new System.Drawing.Point(284, 49);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(221, 91);
+            this.groupBox3.Size = new System.Drawing.Size(154, 91);
             this.groupBox3.TabIndex = 62;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kadar HB";
@@ -441,6 +454,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "< 12,5 MENGAPUNG";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -452,11 +466,12 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "> 12,5 TENGGELAM";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.RadioButton1_CheckedChanged);
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(478, 156);
+            this.label21.Location = new System.Drawing.Point(416, 156);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(22, 15);
             this.label21.TabIndex = 61;
@@ -471,19 +486,13 @@
             this.label19.TabIndex = 60;
             this.label19.Text = "mm";
             // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(425, 154);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(47, 21);
-            this.numericUpDown4.TabIndex = 59;
-            // 
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(337, 154);
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(47, 21);
             this.numericUpDown3.TabIndex = 58;
+            this.numericUpDown3.ValueChanged += new System.EventHandler(this.NumericUpDown3_ValueChanged);
             // 
             // label20
             // 
@@ -498,17 +507,18 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Navy;
-            this.label18.Location = new System.Drawing.Point(6, 269);
+            this.label18.Location = new System.Drawing.Point(18, 269);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(97, 15);
+            this.label18.Size = new System.Drawing.Size(150, 15);
             this.label18.TabIndex = 55;
-            this.label18.Text = "sebanyak 0 kali";
+            this.label18.Text = "sebanyak 0 kali tahun ini";
+            this.label18.Click += new System.EventHandler(this.Label18_Click);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.Navy;
-            this.label17.Location = new System.Drawing.Point(6, 254);
+            this.label17.Location = new System.Drawing.Point(18, 254);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(244, 15);
             this.label17.TabIndex = 54;
@@ -517,18 +527,18 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 31);
+            this.label16.Location = new System.Drawing.Point(18, 31);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 15);
+            this.label16.Size = new System.Drawing.Size(140, 15);
             this.label16.TabIndex = 53;
-            this.label16.Text = "Histori Donor";
+            this.label16.Text = "Histori Donor Tahun Ini";
             // 
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 49);
+            this.dataGridView2.Location = new System.Drawing.Point(18, 49);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(239, 202);
@@ -536,22 +546,82 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1036, 501);
+            this.button1.Location = new System.Drawing.Point(1043, 501);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
             this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(955, 501);
+            this.button2.Location = new System.Drawing.Point(962, 501);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 15;
             this.button2.Text = "Clear";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(460, 156);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(45, 15);
+            this.label26.TabIndex = 67;
+            this.label26.Text = "Nadi : ";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(511, 154);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(47, 21);
+            this.numericUpDown4.TabIndex = 68;
+            this.numericUpDown4.ValueChanged += new System.EventHandler(this.NumericUpDown4_ValueChanged);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(564, 156);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(31, 15);
+            this.label27.TabIndex = 69;
+            this.label27.Text = "BPM";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.radioButton6);
+            this.groupBox5.Controls.Add(this.radioButton7);
+            this.groupBox5.Location = new System.Drawing.Point(444, 49);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(154, 91);
+            this.groupBox5.TabIndex = 63;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Rhesus";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(7, 53);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(84, 19);
+            this.radioButton6.TabIndex = 1;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "(-) Negatif";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton7
+            // 
+            this.radioButton7.AutoSize = true;
+            this.radioButton7.Location = new System.Drawing.Point(7, 28);
+            this.radioButton7.Name = "radioButton7";
+            this.radioButton7.Size = new System.Drawing.Size(82, 19);
+            this.radioButton7.TabIndex = 0;
+            this.radioButton7.TabStop = true;
+            this.radioButton7.Text = "(+) Positif";
+            this.radioButton7.UseVisualStyleBackColor = true;
             // 
             // FormDonor
             // 
@@ -582,9 +652,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,7 +696,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label23;
@@ -638,5 +709,11 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.RadioButton radioButton7;
     }
 }

@@ -172,6 +172,7 @@
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(48, 21);
             this.numericUpDown2.TabIndex = 51;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.NumericUpDown2_ValueChanged);
             // 
             // numericUpDown1
             // 
