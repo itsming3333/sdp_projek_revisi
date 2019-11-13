@@ -36,6 +36,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -54,7 +56,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -129,6 +130,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.textBox3);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.numericUpDown1);
@@ -143,6 +146,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail Tindakan";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(393, 177);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(157, 24);
+            this.label18.TabIndex = 54;
+            this.label18.Text = "Jenis Kantong";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(395, 149);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(86, 15);
+            this.label17.TabIndex = 53;
+            this.label17.Text = "Jenis Kantong";
+            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(24, 146);
@@ -154,7 +176,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(514, 156);
+            this.label16.Location = new System.Drawing.Point(514, 224);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(25, 15);
             this.label16.TabIndex = 18;
@@ -162,7 +184,8 @@
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(443, 154);
+            this.numericUpDown1.Enabled = false;
+            this.numericUpDown1.Location = new System.Drawing.Point(443, 222);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(65, 21);
             this.numericUpDown1.TabIndex = 17;
@@ -170,7 +193,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(395, 156);
+            this.label13.Location = new System.Drawing.Point(395, 224);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 15);
             this.label13.TabIndex = 16;
@@ -241,6 +264,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
             this.radioButton4.Location = new System.Drawing.Point(7, 20);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(62, 19);
@@ -270,10 +294,12 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tidak Lancar";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.RadioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(7, 20);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(63, 19);
@@ -310,7 +336,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label15);
@@ -326,16 +351,6 @@
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Detail Donorer";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 239);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 16);
-            this.label11.TabIndex = 72;
-            this.label11.Text = "Pilihan Kantong : ";
             // 
             // label22
             // 
@@ -440,6 +455,7 @@
             this.button3.TabIndex = 16;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // FormTindakanDonor
             // 
@@ -500,7 +516,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.RadioButton radioButton6;
@@ -517,5 +532,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
     }
 }
