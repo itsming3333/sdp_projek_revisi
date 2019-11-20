@@ -322,6 +322,7 @@
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Perawatan";
+            this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
             // label21
             // 
@@ -542,6 +543,7 @@
             this.button3.TabIndex = 61;
             this.button3.Text = "Next";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // FormRawatSpesialis
             // 

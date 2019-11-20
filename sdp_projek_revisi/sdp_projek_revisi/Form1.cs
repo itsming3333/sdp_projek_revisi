@@ -181,7 +181,7 @@ namespace sdp_projek_revisi
                     btnMenu[i].Font = new Font("MS Reference Sans Serif", 10);
                 }
                 btnMenu[0].Text = "Pengambilan Obat"; btnMenu[0].Click += pengambilan_obat;
-                btnMenu[1].Text = "Absensi"; btnMenu[1].Click += absensi_tugas;
+                btnMenu[1].Text = "Data Obat"; btnMenu[1].Click += master_obat;
                 btnMenu[2].Text = "Logout"; btnMenu[2].Click += logout;
 
                 for (int i = 0; i < 3; i++)
@@ -201,6 +201,13 @@ namespace sdp_projek_revisi
             tabControl1.SelectedTab = tab;
             tabControl1.TabPages.Add(tab);
         }
+        private void master_obat(object sender, EventArgs e)
+        {
+            FormDataObat frm = new FormDataObat();
+            frm.setParent(this);
+            addTab(frm);
+        }
+
         private void absensi_tugas(object sender, EventArgs e)
         {
             FormAbsensi frm = new FormAbsensi();

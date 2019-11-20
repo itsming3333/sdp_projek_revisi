@@ -135,5 +135,65 @@ namespace sdp_projek_revisi
             textBox5.Text = label9.Text.Remove(0, 14);
             textBox6.Text = "Pribadi";
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            bool validation = true;
+            String total = label21.Text.Remove(0, 25);
+            String id_member = label3.Text;
+            String status_pelunasan = "n";
+            String diagnosa_masuk = textBox2.Text;
+            String alergi = textBox3.Text;
+            String wali = textBox4.Text;
+            String telp_wali = textBox5.Text;
+            String relasi_wali = textBox6.Text;
+            String jenis_rawat = "checkup";
+
+            OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM PEGAWAI WHERE NAMA_PEGAWAI = '"+label30.Text+"'", mainParent.oc);
+            DataTable selectedPegawai = new DataTable();
+            oda.Fill(selectedPegawai);
+            oda = new OracleDataAdapter("SELECT * FROM PERAWATAN WHERE NAMA_PERAWATAN = '" + label31.Text + "'", mainParent.oc);
+            DataTable selectedRawat = new DataTable();
+            oda.Fill(selectedRawat);
+
+            String id_rawat = selectedRawat.Rows[0].Field<String>(0);
+            String id_pegawai = selectedPegawai.Rows[0].Field<String>(0);
+            //VALIDATION CHECK
+
+            if (validation)
+            {
+                String dd = DateTime.Now.Day.ToString();
+                String mm = DateTime.Now.Month.ToString();
+                String yyyy = DateTime.Now.Year.ToString();
+                String id = dd + mm + yyyy;
+
+                OracleCommand cmd = new OracleCommand("SELECT AUTO_GEN_ID_TRANS('" + id + "') FROM DUAL", mainParent.oc);
+                id += cmd.ExecuteScalar().ToString();
+
+                try
+                {
+                    //INSERT
+                    cmd = new OracleCommand("INSERT INTO TRANSAKSI VALUES('"+id+ "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'','',"+total+",'"+id_member+"','"+status_pelunasan+"','"+diagnosa_masuk+"','"+alergi+"','"+wali+"','"+telp_wali+"','"+relasi_wali+"','"+jenis_rawat+"')", mainParent.oc);
+                    cmd.ExecuteNonQuery();
+                    cmd = new OracleCommand("INSERT INTO DTRANS_PERAWATAN_INAP VALUES('"+id+"','"+id_rawat+"','"+id_pegawai+ "',0,'ANTRI','','ANTRI',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'n')", mainParent.oc);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("BERHASIL!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                //VALIDATION ERROR
+            }
+        }
+
+        private void GroupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

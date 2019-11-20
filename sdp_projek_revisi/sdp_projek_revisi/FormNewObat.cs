@@ -12,6 +12,7 @@ namespace sdp_projek_revisi
 {
     public partial class FormNewObat : Form
     {
+        Form1 mainParent;
         public FormNewObat()
         {
             InitializeComponent();
@@ -27,6 +28,11 @@ namespace sdp_projek_revisi
         private void Timer1_Tick(object sender, EventArgs e)
         {
             label2.Text = DateTime.Now.ToString();
+        }
+
+        public void setParent(Form1 frm)
+        {
+            this.mainParent = frm;
         }
     }
 }
