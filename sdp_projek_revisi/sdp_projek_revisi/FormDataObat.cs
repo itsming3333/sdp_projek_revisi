@@ -12,6 +12,7 @@ namespace sdp_projek_revisi
 {
     public partial class FormDataObat : Form
     {
+        Form1 mainParent;
         public FormDataObat()
         {
             InitializeComponent();
@@ -27,6 +28,11 @@ namespace sdp_projek_revisi
             label2.Text = DateTime.Now.ToString();
             Dock = DockStyle.Fill;
             timer1.Start();
+        }
+
+        public void setParent(Form1 frm)
+        {
+            this.mainParent = frm;
         }
     }
 }
