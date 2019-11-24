@@ -24,15 +24,26 @@ namespace sdp_projek_revisi
             button1.Hide();
 
             //INISIALISASI CONNECTION
-            try{
+            try
+            {
                 oc = new OracleConnection("user id=n217116635;password=217116635;data source = orcl");
                 oc.Open();
                 MessageBox.Show("Connection Open Ming");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fail Ivan : " + ex.Message);
+
                 //TAMBAH KONEKSI LAINNYA
+                try
+                {
+                    oc = new OracleConnection("user id=system;password=harimau16;data source = orcl");
+                    oc.Open();
+                    MessageBox.Show("Connection Open Wang");
+                }
+                catch (Exception ex1)
+                {
+
+                }
             }
         }
 
