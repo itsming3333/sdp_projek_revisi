@@ -32,8 +32,18 @@ namespace sdp_projek_revisi
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Fail Ivan : " + ex.Message);
+
                 //TAMBAH KONEKSI LAINNYA
+                try
+                {
+                    oc = new OracleConnection("user id=system;password=harimau16;data source = orcl");
+                    oc.Open();
+                    MessageBox.Show("Connection Open Wang");
+                }
+                catch (Exception ex1)
+                {
+                    
+                }
             }
         }
 
