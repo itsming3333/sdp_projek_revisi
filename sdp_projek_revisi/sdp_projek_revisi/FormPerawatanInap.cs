@@ -252,7 +252,46 @@ namespace sdp_projek_revisi
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            String dd = DateTime.Now.Day.ToString();
+            String mm = DateTime.Now.Month.ToString();
+            String yyyy = DateTime.Now.Year.ToString();
+            if (checkBox1.Checked)
+            {
+                //Penambahan Perawatan
+                String id_pegawai = label3.Text;
+                OracleCommand cmd = new OracleCommand("SELECT ID_PERAWATAN FROM PERAWATAN WHERE NAMA_PERAWATAN = '"+label6.Text+"'", mainParent.oc);
+                String id_rawat = cmd.ExecuteScalar().ToString();
+                cmd = new OracleCommand("SELECT MAX(CTR_CHECKUP) FROM DTRANS_PERAWATAN_INAP WHERE ID_TRANS='"+id_trans+"'", mainParent.oc);
+                int ctr = Convert.ToInt32(cmd.ExecuteScalar().ToString())+1;
+                String keterangan = textBox2.Text;
+                String keluhan = textBox1.Text;
+                String tindak_lanjut = textBox3.Text;
+                if (radioButton1.Checked)
+                {
+                    tindak_lanjut = "KELUAR";
+                }else if (radioButton2.Checked)
+                {
+                    tindak_lanjut = numericUpDown1.Value.ToString() + ":" + numericUpDown2.Value.ToString() + " - Tindak Lanjut : " + comboBox4.Text;
+                }
 
+                try
+                {
+                    cmd = new OracleCommand("INSERT INTO DTRANS_PERAWATAN_INAP VALUES('"+id_trans+"','"+id_rawat+"','"+id_pegawai+"',"+ctr+",'"+keterangan+"','"+keluhan+"','"+tindak_lanjut+ "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'n')", mainParent.oc);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            if (checkBox2.Checked)
+            {
+                //TAMBAH SUPPLY
+            }
+            if (checkBox3.Checked)
+            {
+
+            }
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -50,6 +50,7 @@ namespace sdp_projek_revisi
         private void Form1_Load(object sender, EventArgs e)
         {
             form_pengguna();
+            this.Location = new Point(100, 50);
         }
 
         public void admin_form()
@@ -94,7 +95,7 @@ namespace sdp_projek_revisi
 
         public void login_as(String j)
         {
-            tabControl1.Size = new Size(1150, 600);
+            tabControl1.Size = new Size(1160, 610);
             tabControl1.TabPages.Clear();
             button1.Show();
             tabControl1.Show();

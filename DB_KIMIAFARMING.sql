@@ -288,4 +288,16 @@ end;
 /
 show err;
 
+--4
+create or replace function AUTO_GEN_ID_PEGAWAI(a varchar2)
+return varchar2
+is
+    hasil varchar2(30);
+begin
+    select LPAD(count(ID_PEGAWAI),3,'0') into hasil from PEGAWAI where ID_PEGAWAI like '%'||a||'%';
+    return hasil;
+end;
+/
+show err;
+
 
