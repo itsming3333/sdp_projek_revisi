@@ -39,7 +39,7 @@ namespace sdp_projek_revisi
             dataGridView1.DataSource = perawatan;
 
             String jenis_ruang = comboBox3.Text.ToUpper();
-            oda = new OracleDataAdapter("SELECT NOMOR_RUANG AS NOMOR, JENIS_RUANG AS JENIS FROM RUANG WHERE JENIS_RUANG='"+jenis_ruang+"'", mainParent.oc);
+            oda = new OracleDataAdapter("SELECT NOMOR_RUANG AS NOMOR, NAMA_RUANG AS JENIS FROM RUANG WHERE JENIS_RUANG='"+jenis_ruang+"' AND STATUS_RUANG='OPEN'", mainParent.oc);
             DataTable ruang = new DataTable();
             oda.Fill(ruang);
             dataGridView2.DataSource = ruang;
@@ -62,14 +62,16 @@ namespace sdp_projek_revisi
                 int total = 0;
                 for (int i = 0; i < listBox2.Items.Count; i++)
                 {
-                    OracleCommand cmd = new OracleCommand("SELECT HARGA_SUPPLY FROM SUPPLY WHERE NAMA_SUPPLY='"+listBox2.Items[i]+"'", mainParent.oc);
-                    MessageBox.Show("SELECT HARGA_SUPPLY FROM SUPPLY WHERE ID_SUPPLY='" + listBox2.Items[i] + "'");
-                    total += Convert.ToInt32(cmd.ExecuteScalar());
+                    String temp = listBox2.Items[i].ToString();
+                    String[] supply = temp.Split('|');
+                    OracleCommand cmd = new OracleCommand("SELECT HARGA_SUPPLY FROM SUPPLY WHERE NAMA_SUPPLY='"+supply[1]+"'", mainParent.oc);
+                    int subtotal = Convert.ToInt32(cmd.ExecuteScalar()) * Convert.ToInt32(supply[0]);
+                    total += subtotal;
                 }
                 label11.Text = "Rp. " + total;
             }
             catch (Exception ex)
-            {            }
+            {}
         }
 
         public void cekCheckbox()
@@ -242,7 +244,22 @@ namespace sdp_projek_revisi
         {
             try
             {
-                listBox2.Items.Add(listBox1.Text);
+                bool baru = true;
+                for (int i = 0; i < listBox2.Items.Count; i++)
+                {
+                    String temp = listBox2.Items[i].ToString();
+                    String[] supply = temp.Split('|');
+                    if(supply[1] == listBox1.Text)
+                    {
+                        int total = Convert.ToInt32(supply[0]) + 1;
+                        listBox2.Items[i] = total + "|" + supply[1];
+                        baru = false;
+                    }
+                }
+                if (baru)
+                {
+                    listBox2.Items.Add("1|"+listBox1.Text);
+                }             
                 refreshSubtotalObat();
             }
             catch (Exception ex)
@@ -287,10 +304,43 @@ namespace sdp_projek_revisi
             if (checkBox2.Checked)
             {
                 //TAMBAH SUPPLY
+                String id_pegawai = label3.Text;
+                OracleCommand cmd = new OracleCommand("SELECT MAX(CTR_SUPPLY) FROM DTRANS_SUPPLY WHERE ID_TRANS='"+id_trans+"'", mainParent.oc);
+                int ctr_supply = Convert.ToInt32(cmd.ExecuteScalar().ToString()) + 1;
+
+                try
+                {
+                    for (int i = 0; i < listBox2.Items.Count; i++)
+                    {
+                        String[] supply = listBox2.Items[i].ToString().Split('|');
+                        cmd = new OracleCommand("SELECT ID_SUPPLY FROM SUPPLY WHERE NAMA_SUPPLY='" + supply[1] + "'", mainParent.oc);
+                        String id_supply = cmd.ExecuteScalar().ToString();
+                        cmd = new OracleCommand("SELECT HARGA_SUPPLY FROM SUPPLY WHERE NAMA_SUPPLY='" + supply[1] + "'", mainParent.oc);
+                        int harga = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                        int subtotal = Convert.ToInt32(supply[0]) * harga;
+
+                        cmd = new OracleCommand("INSERT INTO DTRANS_SUPPLY VALUES('" + id_supply + "','" + id_trans + "','" + id_pegawai + "'," + supply[0] + "," + subtotal + ",'n'," + ctr_supply + ",'n')", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
             if (checkBox3.Checked)
             {
-
+                //Tambah Ruang
+                String nomor = label20.Text;
+                String nama = label21.Text;
+                if (checkBox4.Checked)
+                {
+                    try
+                    {}
+                    catch (Exception)
+                    {}
+                }
             }
         }
 
@@ -318,11 +368,22 @@ namespace sdp_projek_revisi
         {
             try
             {
-                listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+                String[] supply = listBox2.Text.Split('|');
+                if(supply[0] == "1")
+                {
+                    listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+                }
+                else
+                {
+                    int total = Convert.ToInt32(supply[0]) - 1;
+                    listBox2.Items[listBox2.SelectedIndex] = total + "|" + supply[1];
+                }
+                
                 refreshSubtotalObat();
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -330,6 +391,57 @@ namespace sdp_projek_revisi
         private void Button2_Click(object sender, EventArgs e)
         {
             disableAll();
+        }
+
+        private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            isiData();
+        }
+
+        private void ComboBox3_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            isiData();
+        }
+
+        private void CheckBox4_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked)
+            {
+                dataGridView2.Enabled = false;
+                comboBox3.Enabled = false;
+                OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM RUANG R, DTRANS_RUANG DR WHERE R.ID_RUANG = DR.ID_RUANG AND R.JENIS_RUANG = 'KAMAR'", mainParent.oc);
+                DataTable inapNow = new DataTable();
+                oda.Fill(inapNow);
+                label20.Text = inapNow.Rows[0].Field<String>(1);
+                label21.Text = inapNow.Rows[0].Field<String>(5);
+                label22.Text = "Rp. " + inapNow.Rows[0].Field<Int64>(3).ToString() + "/hari";
+            }
+            else
+            {
+                dataGridView2.Enabled = true;
+                comboBox3.Enabled = true;
+                label20.Text = "-";
+                label21.Text = "Nama Ruang/Kamar";
+                label22.Text = "Rp. -/hari";
+            }
+        }
+
+        private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM RUANG WHERE NOMOR_RUANG='" + dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() + "' AND NAMA_RUANG='" + dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString() + "' AND JENIS_RUANG='" + comboBox3.Text.ToUpper() + "'", mainParent.oc);
+                DataTable selectedRuang = new DataTable();
+                oda.Fill(selectedRuang);
+                label20.Text = selectedRuang.Rows[0].Field<String>(1);
+                label21.Text = selectedRuang.Rows[0].Field<String>(5);
+                label22.Text = "Rp. " + selectedRuang.Rows[0].Field<Int64>(3).ToString() + "/hari";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

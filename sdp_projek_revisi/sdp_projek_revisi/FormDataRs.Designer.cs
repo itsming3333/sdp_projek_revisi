@@ -32,6 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -64,29 +67,35 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button14 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.label14 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -97,9 +106,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -120,9 +131,11 @@
             this.label1.Size = new System.Drawing.Size(446, 60);
             this.label1.TabIndex = 10;
             this.label1.Text = "Data Internal RS";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button12);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -143,6 +156,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Perawatan";
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(143, 447);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 22;
+            this.button12.Text = "Edit";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.Button12_Click);
+            // 
             // textBox3
             // 
             this.textBox3.Enabled = false;
@@ -160,6 +183,7 @@
             this.button3.TabIndex = 20;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button2
             // 
@@ -167,8 +191,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 19;
-            this.button2.Text = "Clear";
+            this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // button1
             // 
@@ -178,15 +203,16 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Spesialis",
-            "Tindakan",
-            "Terapi"});
+            "SPESIALIS",
+            "TINDAKAN",
+            "TERAPI"});
             this.comboBox1.Location = new System.Drawing.Point(119, 417);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 23);
@@ -204,6 +230,11 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(119, 382);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            -727379968,
+            232,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(180, 21);
             this.numericUpDown1.TabIndex = 15;
@@ -240,6 +271,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(289, 21);
             this.textBox1.TabIndex = 11;
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label3
             // 
@@ -260,9 +292,12 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(293, 202);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.button13);
             this.groupBox2.Controls.Add(this.button6);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.button4);
@@ -285,48 +320,72 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ruang";
             // 
+            // textBox7
+            // 
+            this.textBox7.Enabled = false;
+            this.textBox7.Location = new System.Drawing.Point(182, 231);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(47, 21);
+            this.textBox7.TabIndex = 35;
+            this.textBox7.TextChanged += new System.EventHandler(this.TextBox7_TextChanged);
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(265, 376);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 23;
+            this.button13.Text = "Edit";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.Button13_Click);
+            // 
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.Location = new System.Drawing.Point(235, 438);
+            this.button6.Location = new System.Drawing.Point(265, 438);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 22;
             this.button6.Text = "Delete";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(235, 409);
+            this.button5.Location = new System.Drawing.Point(265, 409);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 22;
-            this.button5.Text = "Clear";
+            this.button5.Text = "Cancel";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(235, 376);
+            this.button4.Location = new System.Drawing.Point(265, 376);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 22;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Ruang ICU",
-            "Ruang PACU",
-            "Ruang Operasi",
-            "Ruang CCU / CICU",
-            "Kamar Inap",
-            "Ruang Radiologi",
-            "Ruang Laboratorium",
-            "Ruang Spesialis",
-            "Apotik"});
+            "ICU",
+            "PACU",
+            "Operasi",
+            "CCU / CICU",
+            "Kamar",
+            "Radiologi",
+            "Laboratorium",
+            "Praktek",
+            "Apotik",
+            "Bersalin",
+            "Kantor"});
             this.comboBox2.Location = new System.Drawing.Point(131, 295);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(225, 23);
@@ -338,7 +397,7 @@
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Location = new System.Drawing.Point(18, 365);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(175, 105);
+            this.groupBox3.Size = new System.Drawing.Size(211, 105);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "LABEL RUANG";
@@ -374,6 +433,11 @@
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(150, 329);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(126, 21);
             this.numericUpDown3.TabIndex = 31;
@@ -403,6 +467,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(225, 21);
             this.textBox5.TabIndex = 27;
+            this.textBox5.TextChanged += new System.EventHandler(this.TextBox5_TextChanged);
             // 
             // label10
             // 
@@ -415,26 +480,27 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(131, 229);
+            this.numericUpDown2.Location = new System.Drawing.Point(139, 231);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(37, 21);
             this.numericUpDown2.TabIndex = 23;
+            this.numericUpDown2.ValueChanged += new System.EventHandler(this.NumericUpDown2_ValueChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 231);
+            this.label7.Location = new System.Drawing.Point(6, 233);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 15);
+            this.label7.Size = new System.Drawing.Size(133, 15);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Lantai Ruang :";
+            this.label7.Text = "Lantai Ruang/Nomor :";
             // 
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(222, 231);
+            this.textBox4.Location = new System.Drawing.Point(235, 231);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(154, 21);
+            this.textBox4.Size = new System.Drawing.Size(121, 21);
             this.textBox4.TabIndex = 22;
             // 
             // dataGridView2
@@ -447,9 +513,19 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(370, 202);
             this.dataGridView2.TabIndex = 21;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.textBox6);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.numericUpDown6);
+            this.groupBox4.Controls.Add(this.numericUpDown7);
+            this.groupBox4.Controls.Add(this.comboBox3);
+            this.groupBox4.Controls.Add(this.button14);
             this.groupBox4.Controls.Add(this.button11);
             this.groupBox4.Controls.Add(this.button10);
             this.groupBox4.Controls.Add(this.label21);
@@ -462,16 +538,13 @@
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.numericUpDown5);
             this.groupBox4.Controls.Add(this.numericUpDown4);
-            this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.comboBox5);
             this.groupBox4.Controls.Add(this.label18);
             this.groupBox4.Controls.Add(this.comboBox4);
-            this.groupBox4.Controls.Add(this.comboBox3);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.dataGridView4);
-            this.groupBox4.Controls.Add(this.textBox6);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Location = new System.Drawing.Point(726, 76);
             this.groupBox4.Name = "groupBox4";
@@ -479,89 +552,197 @@
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Shift Jaga";
+            this.groupBox4.Enter += new System.EventHandler(this.GroupBox4_Enter);
             // 
-            // label14
+            // label24
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 24);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(148, 15);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "Pilih Perawatan Spesialis";
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(227, 45);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(14, 15);
+            this.label24.TabIndex = 61;
+            this.label24.Text = "0";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(207, 45);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(30, 15);
+            this.label23.TabIndex = 60;
+            this.label23.Text = "Rp. ";
             // 
             // textBox6
             // 
             this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(17, 71);
+            this.textBox6.Location = new System.Drawing.Point(17, 228);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(343, 21);
-            this.textBox6.TabIndex = 35;
+            this.textBox6.TabIndex = 59;
             // 
-            // dataGridView4
+            // label22
             // 
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView4.Location = new System.Drawing.Point(17, 115);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(343, 137);
-            this.dataGridView4.TabIndex = 37;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView4_CellContentClick);
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(257, 261);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(12, 15);
+            this.label22.TabIndex = 58;
+            this.label22.Text = "-";
             // 
-            // label15
+            // label19
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 97);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(140, 15);
-            this.label15.TabIndex = 38;
-            this.label15.Text = "Jadwal yang sudah ada";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(314, 260);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(12, 15);
+            this.label19.TabIndex = 57;
+            this.label19.Text = ":";
             // 
-            // label16
+            // numericUpDown6
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 288);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(152, 15);
-            this.label16.TabIndex = 35;
-            this.label16.Text = "Ruangan yang tersedia : ";
+            this.numericUpDown6.Location = new System.Drawing.Point(327, 258);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(41, 21);
+            this.numericUpDown6.TabIndex = 56;
             // 
-            // label17
+            // numericUpDown7
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(21, 314);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(145, 15);
-            this.label17.TabIndex = 39;
-            this.label17.Text = "Dokter yang bertugas : ";
+            this.numericUpDown7.Location = new System.Drawing.Point(271, 258);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(41, 21);
+            this.numericUpDown7.TabIndex = 55;
             // 
             // comboBox3
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(172, 285);
+            this.comboBox3.Location = new System.Drawing.Point(172, 286);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(188, 23);
-            this.comboBox3.TabIndex = 40;
+            this.comboBox3.TabIndex = 54;
             // 
-            // comboBox4
+            // button14
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(172, 311);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(188, 23);
-            this.comboBox4.TabIndex = 41;
+            this.button14.Location = new System.Drawing.Point(160, 454);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 35;
+            this.button14.Text = "Edit";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.Button14_Click);
             // 
-            // label18
+            // button11
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(21, 261);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(43, 15);
-            this.label18.TabIndex = 42;
-            this.label18.Text = "Hari : ";
+            this.button11.Location = new System.Drawing.Point(185, 398);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 34);
+            this.button11.TabIndex = 53;
+            this.button11.Text = "<";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.Button11_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(185, 353);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(28, 34);
+            this.button10.TabIndex = 35;
+            this.button10.Text = ">";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.Button10_Click);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(48, 335);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(114, 15);
+            this.label21.TabIndex = 52;
+            this.label21.Text = "Suster Pembantu :";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 15;
+            this.listBox2.Location = new System.Drawing.Point(219, 353);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(138, 79);
+            this.listBox2.TabIndex = 51;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(41, 353);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(138, 79);
+            this.listBox1.TabIndex = 50;
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(17, 42);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(184, 23);
+            this.comboBox6.TabIndex = 49;
+            this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.ComboBox6_SelectedIndexChanged);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Red;
+            this.button9.Location = new System.Drawing.Point(241, 454);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 35;
+            this.button9.Text = "Delete";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.Button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(79, 454);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 48;
+            this.button8.Text = "Cancel";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.Button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(160, 454);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 35;
+            this.button7.Text = "Add";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.EnabledChanged += new System.EventHandler(this.Button7_EnabledChanged);
+            this.button7.VisibleChanged += new System.EventHandler(this.Button7_VisibleChanged);
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(203, 261);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(12, 15);
+            this.label20.TabIndex = 47;
+            this.label20.Text = ":";
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(216, 259);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(41, 21);
+            this.numericUpDown5.TabIndex = 46;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(160, 259);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(41, 21);
+            this.numericUpDown4.TabIndex = 45;
             // 
             // comboBox5
             // 
@@ -575,126 +756,77 @@
             "JUMAT",
             "SABTU",
             "MINGGU"});
-            this.comboBox5.Location = new System.Drawing.Point(62, 258);
+            this.comboBox5.Location = new System.Drawing.Point(62, 257);
             this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(100, 23);
+            this.comboBox5.Size = new System.Drawing.Size(92, 23);
             this.comboBox5.TabIndex = 43;
             // 
-            // label19
+            // label18
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(169, 261);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(56, 15);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "Waktu : ";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(13, 261);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 15);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "Waktu : ";
             // 
-            // numericUpDown4
+            // comboBox4
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(219, 259);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(41, 21);
-            this.numericUpDown4.TabIndex = 45;
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(172, 311);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(188, 23);
+            this.comboBox4.TabIndex = 41;
             // 
-            // numericUpDown5
+            // label17
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(275, 259);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(41, 21);
-            this.numericUpDown5.TabIndex = 46;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(21, 314);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(145, 15);
+            this.label17.TabIndex = 39;
+            this.label17.Text = "Dokter yang bertugas : ";
             // 
-            // label20
+            // label16
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(262, 261);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(12, 15);
-            this.label20.TabIndex = 47;
-            this.label20.Text = ":";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(14, 288);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(152, 15);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Ruangan yang tersedia : ";
             // 
-            // button7
+            // label15
             // 
-            this.button7.Location = new System.Drawing.Point(160, 454);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 35;
-            this.button7.Text = "Add";
-            this.button7.UseVisualStyleBackColor = true;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 67);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(140, 15);
+            this.label15.TabIndex = 38;
+            this.label15.Text = "Jadwal yang sudah ada";
             // 
-            // button8
+            // dataGridView4
             // 
-            this.button8.Location = new System.Drawing.Point(79, 454);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 48;
-            this.button8.Text = "Clear";
-            this.button8.UseVisualStyleBackColor = true;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView4.Location = new System.Drawing.Point(17, 85);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(343, 137);
+            this.dataGridView4.TabIndex = 37;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView4_CellClick);
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView4_CellContentClick);
             // 
-            // button9
+            // label14
             // 
-            this.button9.BackColor = System.Drawing.Color.Red;
-            this.button9.Location = new System.Drawing.Point(241, 454);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 35;
-            this.button9.Text = "Delete";
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(17, 42);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(343, 23);
-            this.comboBox6.TabIndex = 49;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Enabled = false;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(41, 353);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(138, 79);
-            this.listBox1.TabIndex = 50;
-            // 
-            // listBox2
-            // 
-            this.listBox2.Enabled = false;
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 15;
-            this.listBox2.Location = new System.Drawing.Point(219, 353);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(138, 79);
-            this.listBox2.TabIndex = 51;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(48, 335);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(114, 15);
-            this.label21.TabIndex = 52;
-            this.label21.Text = "Suster Pembantu :";
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(185, 353);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(28, 34);
-            this.button10.TabIndex = 35;
-            this.button10.Text = ">";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(185, 398);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 34);
-            this.button11.TabIndex = 53;
-            this.button11.Text = "<";
-            this.button11.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(14, 24);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(148, 15);
+            this.label14.TabIndex = 36;
+            this.label14.Text = "Pilih Perawatan Spesialis";
             // 
             // timer1
             // 
@@ -729,9 +861,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -757,7 +891,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox5;
@@ -775,17 +908,14 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.NumericUpDown numericUpDown5;
         private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button9;
@@ -798,5 +928,18 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

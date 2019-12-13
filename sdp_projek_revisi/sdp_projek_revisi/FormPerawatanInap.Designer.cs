@@ -56,11 +56,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.label22 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -82,6 +80,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -368,10 +368,10 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.checkBox4);
+            this.groupBox4.Controls.Add(this.comboBox3);
             this.groupBox4.Controls.Add(this.label22);
             this.groupBox4.Controls.Add(this.dataGridView2);
             this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.comboBox3);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label19);
@@ -381,17 +381,6 @@
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ruang";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(10, 276);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(168, 19);
-            this.checkBox4.TabIndex = 24;
-            this.checkBox4.Text = "Perpanjang Sewa Kamar";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged);
             // 
             // label22
             // 
@@ -412,6 +401,7 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(301, 150);
             this.dataGridView2.TabIndex = 5;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
             // 
             // label21
             // 
@@ -421,21 +411,6 @@
             this.label21.Size = new System.Drawing.Size(123, 15);
             this.label21.TabIndex = 64;
             this.label21.Text = "Nama Ruang/Kamar";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Bersalin",
-            "Operasi",
-            "Radiologi",
-            "Laboratorium"});
-            this.comboBox3.Location = new System.Drawing.Point(101, 27);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(210, 23);
-            this.comboBox3.TabIndex = 1;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -644,6 +619,39 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "ICU",
+            "PACU",
+            "Operasi",
+            "CCU / CICU",
+            "Kamar",
+            "Radiologi",
+            "Laboratorium",
+            "Praktek",
+            "Apotik",
+            "Bersalin",
+            "Kantor"});
+            this.comboBox3.Location = new System.Drawing.Point(96, 27);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(215, 23);
+            this.comboBox3.TabIndex = 66;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged_1);
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(10, 276);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(133, 19);
+            this.checkBox4.TabIndex = 67;
+            this.checkBox4.Text = "Perpanjang Kamar";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged_1);
+            // 
             // FormPerawatanInap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -714,7 +722,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
@@ -747,6 +754,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.CheckBox checkBox4;
     }
 }
