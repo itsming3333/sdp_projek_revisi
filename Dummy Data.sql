@@ -122,5 +122,3 @@ INSERT INTO SUPPLY VALUES('SO011','KANTONG DARAH AB 600CC','-',360000,'DONOR','U
 INSERT INTO SUPPLY VALUES('SO012','BETADINE 60ML','obat untuk membersihkan luka akibat cedera pada kulit, Betadine mengandung zat aktif povidone iodine yang bekerja membunuh bakteri pada luka.',60000,'OBAT','UNIT');
 
 COMMIT;
-
-
