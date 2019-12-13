@@ -181,6 +181,29 @@ namespace sdp_projek_revisi
             {
                 FormWelcome frm = new FormWelcome();
                 addTab(frm);
+                btnMenu = new Button[4];
+                for (int i = 0; i < 4; i++)
+                {
+                    btnMenu[i] = new Button();
+                    btnMenu[i].Height = 100;
+                    btnMenu[i].Width = 100;
+                    btnMenu[i].BackColor = Color.LightBlue;
+                    btnMenu[i].Location = new Point(i * 100 + 15, 15);
+                    btnMenu[i].Font = new Font("MS Reference Sans Serif", 9);
+                }
+                btnMenu[0].Text = "Pengambilan Obat"; btnMenu[0].Click += pengambilan_obat;
+                btnMenu[1].Text = "Data Obat"; btnMenu[1].Click += master_obat;
+                btnMenu[2].Text = "Tambah Obat"; btnMenu[2].Click += new_obat;
+                btnMenu[3].Text = "Logout"; btnMenu[3].Click += logout;
+
+                for (int i = 0; i < 4; i++)
+                {
+                    Controls.Add(btnMenu[i]);
+                }
+            }else if(j == "WAREHOUSE")
+            {
+                FormWelcome frm = new FormWelcome();
+                addTab(frm);
                 btnMenu = new Button[3];
                 for (int i = 0; i < 3; i++)
                 {
@@ -189,16 +212,19 @@ namespace sdp_projek_revisi
                     btnMenu[i].Width = 100;
                     btnMenu[i].BackColor = Color.LightBlue;
                     btnMenu[i].Location = new Point(i * 100 + 15, 15);
-                    btnMenu[i].Font = new Font("MS Reference Sans Serif", 10);
+                    btnMenu[i].Font = new Font("MS Reference Sans Serif", 9);
                 }
-                btnMenu[0].Text = "Pengambilan Obat"; btnMenu[0].Click += pengambilan_obat;
-                btnMenu[1].Text = "Data Obat"; btnMenu[1].Click += master_obat;
+                btnMenu[0].Text = "Isi Stok"; btnMenu[0].Click += isi_stok;
+                btnMenu[1].Text = "Laporan Gudang"; btnMenu[1].Click += master_obat;
                 btnMenu[2].Text = "Logout"; btnMenu[2].Click += logout;
 
                 for (int i = 0; i < 3; i++)
                 {
                     Controls.Add(btnMenu[i]);
                 }
+            }else if(j == "KASIR")
+            {
+
             }
         }
         
@@ -212,9 +238,21 @@ namespace sdp_projek_revisi
             tabControl1.SelectedTab = tab;
             tabControl1.TabPages.Add(tab);
         }
+        private void isi_stok(object sender, EventArgs e)
+        {
+            FormIsiStok frm = new FormIsiStok();
+            frm.setParent(this);
+            addTab(frm);
+        }
         private void master_obat(object sender, EventArgs e)
         {
             FormDataObat frm = new FormDataObat();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void new_obat(object sender, EventArgs e)
+        {
+            FormNewObat frm = new FormNewObat();
             frm.setParent(this);
             addTab(frm);
         }

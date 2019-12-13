@@ -75,6 +75,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label24 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,6 +140,7 @@
             this.button1.TabIndex = 23;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // textBox1
             // 
@@ -320,6 +322,7 @@
             this.checkBox2.TabIndex = 25;
             this.checkBox2.Text = "Supply Tambahan";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2_CheckedChanged);
             // 
             // groupBox5
             // 
@@ -378,10 +381,10 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(7, 18);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(72, 19);
+            this.radioButton1.Size = new System.Drawing.Size(51, 19);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Sembuh";
+            this.radioButton1.Text = "Inap";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // textBox2
@@ -463,6 +466,7 @@
             this.button4.TabIndex = 19;
             this.button4.Text = "<";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button3
             // 
@@ -472,6 +476,7 @@
             this.button3.TabIndex = 18;
             this.button3.Text = ">";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // listBox1
             // 
@@ -494,6 +499,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(277, 23);
             this.comboBox2.TabIndex = 1;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // label23
             // 
@@ -521,6 +527,7 @@
             this.button7.TabIndex = 28;
             this.button7.Text = "Clear";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.Button7_Click);
             // 
             // button6
             // 
@@ -536,12 +543,23 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.Red;
+            this.label24.Location = new System.Drawing.Point(450, 528);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(326, 15);
+            this.label24.TabIndex = 50;
+            this.label24.Text = "Keterangan pasien dapat dilihat pada menu Data Rawat";
+            // 
             // FormPerawatanCheckup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1150, 600);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.groupBox3);
@@ -620,5 +638,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label24;
     }
 }

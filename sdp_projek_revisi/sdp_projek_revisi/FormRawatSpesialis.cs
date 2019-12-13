@@ -173,7 +173,7 @@ namespace sdp_projek_revisi
                 try
                 {
                     //INSERT
-                    cmd = new OracleCommand("INSERT INTO TRANSAKSI VALUES('"+id+ "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'','',"+total+",'"+id_member+"','"+status_pelunasan+"','"+diagnosa_masuk+"','"+alergi+"','"+wali+"','"+telp_wali+"','"+relasi_wali+"','"+jenis_rawat+"')", mainParent.oc);
+                    cmd = new OracleCommand("INSERT INTO TRANSAKSI VALUES('"+id.ToUpper()+ "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'','ANTRI',"+total+",'"+id_member.ToUpper()+"','"+status_pelunasan.ToUpper()+"','"+diagnosa_masuk.ToUpper()+"','"+alergi+"','"+wali.ToUpper()+"','"+telp_wali+"','"+relasi_wali.ToUpper()+"','"+jenis_rawat.ToUpper()+"')", mainParent.oc);
                     cmd.ExecuteNonQuery();
                     cmd = new OracleCommand("INSERT INTO DTRANS_PERAWATAN_INAP VALUES('"+id+"','"+id_rawat+"','"+id_pegawai+ "',0,'ANTRI','','ANTRI',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'n')", mainParent.oc);
                     cmd.ExecuteNonQuery();
