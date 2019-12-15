@@ -31,7 +31,6 @@ namespace sdp_projek_revisi
             label2.Text = DateTime.Now.ToString();
             timer1.Start();
             groupBox2.Enabled = false;
-            MessageBox.Show("SELECT * FROM PEGAWAI WHERE ID_PEGAWAI='" + mainParent.id_login + "'");
             OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM PEGAWAI WHERE ID_PEGAWAI='" + mainParent.id_login + "'", mainParent.oc);
             DataTable login = new DataTable();
             oda.Fill(login);

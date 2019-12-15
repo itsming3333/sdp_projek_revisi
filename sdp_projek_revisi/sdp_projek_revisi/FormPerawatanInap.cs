@@ -333,7 +333,7 @@ namespace sdp_projek_revisi
             {
                 //Tambah Ruang
                 String nomor = label20.Text;
-                String nama = label21.Text;
+                String nama = namaruangan.Text;
                 if (checkBox4.Checked)
                 {
                     try
@@ -413,16 +413,16 @@ namespace sdp_projek_revisi
                 DataTable inapNow = new DataTable();
                 oda.Fill(inapNow);
                 label20.Text = inapNow.Rows[0].Field<String>(1);
-                label21.Text = inapNow.Rows[0].Field<String>(5);
-                label22.Text = "Rp. " + inapNow.Rows[0].Field<Int64>(3).ToString() + "/hari";
+                namaruangan.Text = inapNow.Rows[0].Field<String>(5);
+                hargaruangan.Text = "Rp. " + inapNow.Rows[0].Field<Int64>(3).ToString() + "/hari";
             }
             else
             {
                 dataGridView2.Enabled = true;
                 comboBox3.Enabled = true;
                 label20.Text = "-";
-                label21.Text = "Nama Ruang/Kamar";
-                label22.Text = "Rp. -/hari";
+                namaruangan.Text = "Nama Ruang/Kamar";
+                hargaruangan.Text = "Rp. -/hari";
             }
         }
 
@@ -434,8 +434,8 @@ namespace sdp_projek_revisi
                 DataTable selectedRuang = new DataTable();
                 oda.Fill(selectedRuang);
                 label20.Text = selectedRuang.Rows[0].Field<String>(1);
-                label21.Text = selectedRuang.Rows[0].Field<String>(5);
-                label22.Text = "Rp. " + selectedRuang.Rows[0].Field<Int64>(3).ToString() + "/hari";
+                namaruangan.Text = selectedRuang.Rows[0].Field<String>(5);
+                hargaruangan.Text = "Rp. " + selectedRuang.Rows[0].Field<Int64>(3).ToString() + "/hari";
 
             }
             catch (Exception ex)
