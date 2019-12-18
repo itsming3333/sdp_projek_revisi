@@ -187,7 +187,6 @@ namespace sdp_projek_revisi
 
             OracleCommand cmd = new OracleCommand("SELECT COUNT(*) FROM TRANSAKSI WHERE ID_TRANS='" + id_trans + "' AND JENIS_RAWAT='INAP'", mainParent.oc);
             int ada = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-            MessageBox.Show("SELECT COUNT(*) FROM TRANSAKSI WHERE ID_TRANS='" + id_trans + "' AND JENIS_RAWAT='INAP'");
             if (ada > 0)
             {
                 enableData();
