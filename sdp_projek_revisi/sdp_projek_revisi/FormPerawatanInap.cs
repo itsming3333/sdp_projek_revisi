@@ -306,7 +306,13 @@ namespace sdp_projek_revisi
                 //TAMBAH SUPPLY
                 String id_pegawai = label3.Text;
                 OracleCommand cmd = new OracleCommand("SELECT MAX(CTR_SUPPLY) FROM DTRANS_SUPPLY WHERE ID_TRANS='"+id_trans+"'", mainParent.oc);
-                int ctr_supply = Convert.ToInt32(cmd.ExecuteScalar().ToString()) + 1;
+                int ctr_supply = 0;
+
+                if(cmd.ExecuteScalar().ToString() != "")
+                {
+                    MessageBox.Show(cmd.ExecuteScalar().ToString());
+                    ctr_supply = Convert.ToInt32(cmd.ExecuteScalar().ToString()) + 1;
+                }
 
                 try
                 {
