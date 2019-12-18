@@ -32,8 +32,18 @@ namespace sdp_projek_revisi
             String yyyy = DateTime.Now.Year.ToString();
             id_isi = "S" + dd + mm + yyyy;
             OracleCommand cmd = new OracleCommand("SELECT AUTO_GEN_ID_STOK('"+id_isi+"') FROM DUAL", mainParent.oc);
-            id_isi += cmd.ExecuteScalar().ToString();
-            textBox1.Text = id_isi;
+            if(cmd.ExecuteScalar() == null)
+            {
+                id_isi += "000";
+                textBox1.Text = id_isi;
+                
+            }
+            else
+            {
+                id_isi += cmd.ExecuteScalar().ToString();
+                textBox1.Text = id_isi;
+            }
+            
         }
         private void clearDetail()
         {
@@ -224,6 +234,7 @@ namespace sdp_projek_revisi
                     dataGridView1.Rows[sameRow].Cells[4].Value = label10.Text;
                 }
             }
+            updateTotal();
             clearDetail();
         }
 

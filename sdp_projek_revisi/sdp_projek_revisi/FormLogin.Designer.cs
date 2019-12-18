@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,16 @@
             this.panel1.Size = new System.Drawing.Size(642, 327);
             this.panel1.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(175, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(146, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "ID/Password anda salah";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(268, 214);
@@ -91,6 +101,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(178, 173);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(376, 21);
             this.textBox2.TabIndex = 4;
             // 
@@ -120,22 +131,12 @@
             this.label2.Text = "ID Pegawai";
             this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(175, 197);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(146, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ID/Password anda salah";
-            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1200, 900);
+            this.ClientSize = new System.Drawing.Size(1200, 845);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

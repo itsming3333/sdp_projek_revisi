@@ -56,9 +56,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.hargaruangan = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label21 = new System.Windows.Forms.Label();
+            this.namaruangan = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -80,8 +82,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -185,7 +185,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 56);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(355, 150);
@@ -218,7 +218,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(30, 243);
+            this.checkBox1.Location = new System.Drawing.Point(30, 250);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(86, 19);
             this.checkBox1.TabIndex = 10;
@@ -369,9 +369,9 @@
             // 
             this.groupBox4.Controls.Add(this.checkBox4);
             this.groupBox4.Controls.Add(this.comboBox3);
-            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.hargaruangan);
             this.groupBox4.Controls.Add(this.dataGridView2);
-            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.namaruangan);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label19);
@@ -382,14 +382,47 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ruang";
             // 
-            // label22
+            // checkBox4
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(169, 237);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(106, 15);
-            this.label22.TabIndex = 65;
-            this.label22.Text = "Rp. 1050000/hari";
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(10, 277);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(133, 19);
+            this.checkBox4.TabIndex = 67;
+            this.checkBox4.Text = "Perpanjang Kamar";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged_1);
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "ICU",
+            "PACU",
+            "Operasi",
+            "CCU / CICU",
+            "Kamar",
+            "Radiologi",
+            "Laboratorium",
+            "Praktek",
+            "Apotik",
+            "Bersalin",
+            "Kantor"});
+            this.comboBox3.Location = new System.Drawing.Point(96, 27);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(215, 23);
+            this.comboBox3.TabIndex = 66;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged_1);
+            // 
+            // hargaruangan
+            // 
+            this.hargaruangan.AutoSize = true;
+            this.hargaruangan.Location = new System.Drawing.Point(169, 237);
+            this.hargaruangan.Name = "hargaruangan";
+            this.hargaruangan.Size = new System.Drawing.Size(12, 15);
+            this.hargaruangan.TabIndex = 65;
+            this.hargaruangan.Text = "-";
             // 
             // dataGridView2
             // 
@@ -403,14 +436,14 @@
             this.dataGridView2.TabIndex = 5;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellClick);
             // 
-            // label21
+            // namaruangan
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(169, 222);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(123, 15);
-            this.label21.TabIndex = 64;
-            this.label21.Text = "Nama Ruang/Kamar";
+            this.namaruangan.AutoSize = true;
+            this.namaruangan.Location = new System.Drawing.Point(169, 222);
+            this.namaruangan.Name = "namaruangan";
+            this.namaruangan.Size = new System.Drawing.Size(12, 15);
+            this.namaruangan.TabIndex = 64;
+            this.namaruangan.Text = "-";
             // 
             // label20
             // 
@@ -418,9 +451,9 @@
             this.label20.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(50, 238);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(49, 24);
+            this.label20.Size = new System.Drawing.Size(20, 24);
             this.label20.TabIndex = 63;
-            this.label20.Text = "303";
+            this.label20.Text = "-";
             // 
             // label13
             // 
@@ -619,39 +652,6 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "ICU",
-            "PACU",
-            "Operasi",
-            "CCU / CICU",
-            "Kamar",
-            "Radiologi",
-            "Laboratorium",
-            "Praktek",
-            "Apotik",
-            "Bersalin",
-            "Kantor"});
-            this.comboBox3.Location = new System.Drawing.Point(96, 27);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(215, 23);
-            this.comboBox3.TabIndex = 66;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedIndexChanged_1);
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(10, 276);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(133, 19);
-            this.checkBox4.TabIndex = 67;
-            this.checkBox4.Text = "Perpanjang Kamar";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            this.checkBox4.CheckedChanged += new System.EventHandler(this.CheckBox4_CheckedChanged_1);
-            // 
             // FormPerawatanInap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -734,8 +734,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label hargaruangan;
+        private System.Windows.Forms.Label namaruangan;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox2;

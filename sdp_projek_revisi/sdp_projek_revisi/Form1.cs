@@ -38,7 +38,7 @@ namespace sdp_projek_revisi
                 {
                     oc = new OracleConnection("user id=system;password=harimau16;data source = orcl");
                     oc.Open();
-                    MessageBox.Show("Connection Open Wang");
+                    MessageBox.Show("Connection Open Again!");
                 }
                 catch (Exception ex1)
                 {

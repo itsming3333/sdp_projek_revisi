@@ -52,6 +52,7 @@ namespace sdp_projek_revisi
             comboBox2.SelectedIndex = 0;
             timer1.Start();
             showData();
+            clearwarning();
         }
 
         public void setParent(Form1 parent)
@@ -61,6 +62,8 @@ namespace sdp_projek_revisi
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            groupBox2.Enabled = true;
+            groupBox3.Enabled = true;
             try
             {
                 int row = e.RowIndex;
@@ -92,8 +95,6 @@ namespace sdp_projek_revisi
                 label11.Text = "Jenis Kelamin : " + jk;
                 numericUpDown1.Value = berat;
                 numericUpDown2.Value = tinggi;
-                groupBox2.Enabled = true;
-                groupBox3.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -149,19 +150,60 @@ namespace sdp_projek_revisi
             String relasi_wali = textBox6.Text;
             String jenis_rawat = "checkup";
 
-            OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM PEGAWAI WHERE NAMA_PEGAWAI = '"+label30.Text+"'", mainParent.oc);
-            DataTable selectedPegawai = new DataTable();
-            oda.Fill(selectedPegawai);
-            oda = new OracleDataAdapter("SELECT * FROM PERAWATAN WHERE NAMA_PERAWATAN = '" + label31.Text + "'", mainParent.oc);
-            DataTable selectedRawat = new DataTable();
-            oda.Fill(selectedRawat);
-
-            String id_rawat = selectedRawat.Rows[0].Field<String>(0);
-            String id_pegawai = selectedPegawai.Rows[0].Field<String>(0);
+            
+            if (textBox2.Text == "")
+            {
+                validation = false;
+                label22.Text = "Keluhan Harus Terisi";
+            }
+            if (label20.Text == "-")
+            {
+                validation = false;
+                label26.Text = "Pilih Ruangan";
+            }
+            if(textBox4.Text == "")
+            {
+                validation = false;
+                label27.Text = "Masukan nama kontak rujukan";
+            }
+            if (textBox5.Text == "")
+            {
+                validation = false;
+                label28.Text = "Masukan Telp. kontak rujukan";
+            }
+            if (!textBox5.Text.All(char.IsNumber))
+            {
+                validation = false;
+                label28.Text = "Telp. kontak rujukan harus angka";
+            }
+            if (textBox6.Text == "")
+            {
+                validation = false;
+                label29.Text = "Masukan relasi kontak rujukan";
+            }
+            if (numericUpDown1.Minimum == 0)
+            {
+                validation = false;
+                label24.Text = "Masukan Berat Badannya";
+            }
+            if (numericUpDown2.Minimum == 0)
+            {
+                validation = false;
+                label24.Text = "Masukan Tinggi Badannya";
+            }
             //VALIDATION CHECK
 
             if (validation)
             {
+                OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM PEGAWAI WHERE NAMA_PEGAWAI = '" + label30.Text + "'", mainParent.oc);
+                DataTable selectedPegawai = new DataTable();
+                oda.Fill(selectedPegawai);
+                oda = new OracleDataAdapter("SELECT * FROM PERAWATAN WHERE NAMA_PERAWATAN = '" + label31.Text + "'", mainParent.oc);
+                DataTable selectedRawat = new DataTable();
+                oda.Fill(selectedRawat);
+
+                String id_rawat = selectedRawat.Rows[0].Field<String>(0);
+                String id_pegawai = selectedPegawai.Rows[0].Field<String>(0);
                 String dd = DateTime.Now.Day.ToString();
                 String mm = DateTime.Now.Month.ToString();
                 String yyyy = DateTime.Now.Year.ToString();
@@ -179,6 +221,15 @@ namespace sdp_projek_revisi
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("BERHASIL!");
+                    groupBox2.Enabled = false;
+                    groupBox3.Enabled = false;
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    textBox5.Text = "";
+                    textBox6.Text = "";
+                    label20.Text = "-";
+                    clearwarning();
                 }
                 catch (Exception ex)
                 {
@@ -193,6 +244,30 @@ namespace sdp_projek_revisi
 
         private void GroupBox2_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        public void clearwarning ()
+        {
+            label22.Text = "";
+            label26.Text = "";
+            label27.Text = "";
+            label28.Text = "";
+            label29.Text = "";
+            label33.Text = "";
+            label34.Text = "";
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            label20.Text = "-";
+            numericUpDown1.Value = 1;
+            numericUpDown2.Value = 1;
+            clearwarning();
 
         }
     }

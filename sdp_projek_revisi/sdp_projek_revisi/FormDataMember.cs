@@ -190,9 +190,14 @@ namespace sdp_projek_revisi
             if(telp == "")
             {
                 validasi = false;
-                label14.Text = "Nomor Telp/HP harus diisi";
+                label14.Text = "Nomor Telp/HP Tidak Boleh Kosong";
             }
-            if(alamat == "")
+            if (!telp.All(char.IsNumber))
+            {
+                validasi = false;
+                label14.Text = "Nomor Telp/HP Tidak Valid";
+            }
+            if (alamat == "")
             {
                 validasi = false;
                 label11.Text = "Alamat harus diisi";
@@ -220,9 +225,7 @@ namespace sdp_projek_revisi
                         showData();
                     }
                     catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
+                    {}
                 }
             }
         }
