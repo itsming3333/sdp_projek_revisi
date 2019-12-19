@@ -316,9 +316,6 @@ namespace sdp_projek_revisi
             numericUpDown4.Value = 0;
             numericUpDown5.Value = 0;
             groupBox2.Enabled = false;
-            groupBox3.Enabled = false;
-            groupBox4.Enabled = false;
-            groupBox5.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

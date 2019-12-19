@@ -35,13 +35,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,6 +112,55 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sedang Berjalan";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(59, 145);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(196, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Absen Keluar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Cyan;
+            this.button1.Location = new System.Drawing.Point(59, 116);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Absen Masuk";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 65);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(126, 15);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Waktu 00:00 - 00:00";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 50);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Ruang Tugas";
+            this.label6.Click += new System.EventHandler(this.Label6_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nama Tugas";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
@@ -129,53 +178,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(709, 374);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nama Tugas";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 50);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 15);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Ruang Tugas";
-            this.label6.Click += new System.EventHandler(this.Label6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(8, 65);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 15);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Waktu 00:00 - 00:00";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Cyan;
-            this.button1.Location = new System.Drawing.Point(59, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Absen Masuk";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(59, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Absen Keluar";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // timer1
             // 
