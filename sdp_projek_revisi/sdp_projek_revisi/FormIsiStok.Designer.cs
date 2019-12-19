@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -55,12 +56,14 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.NAMA_SUPPLY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SATUAN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HARGA_BELI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SUBTOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label5 = new System.Windows.Forms.Label();
+            this.exp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -160,6 +163,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
@@ -178,17 +183,26 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(520, 131);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(591, 384);
+            this.groupBox2.Size = new System.Drawing.Size(591, 396);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail Isi Stok";
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(487, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 15);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Satuan";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(135, 346);
+            this.label12.Location = new System.Drawing.Point(135, 366);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 26);
             this.label12.TabIndex = 28;
@@ -199,7 +213,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 346);
+            this.label11.Location = new System.Drawing.Point(6, 366);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(144, 26);
             this.label11.TabIndex = 27;
@@ -207,7 +221,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(429, 346);
+            this.button5.Location = new System.Drawing.Point(429, 366);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 26;
@@ -217,7 +231,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(510, 346);
+            this.button4.Location = new System.Drawing.Point(510, 366);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 18;
@@ -227,7 +241,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(177, 89);
+            this.button3.Location = new System.Drawing.Point(176, 107);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 25;
@@ -237,7 +251,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(258, 89);
+            this.button2.Location = new System.Drawing.Point(257, 107);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
@@ -341,13 +355,30 @@
             this.SATUAN,
             this.HARGA_BELI,
             this.QTY,
-            this.SUBTOTAL});
+            this.SUBTOTAL,
+            this.exp});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 118);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 138);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(579, 222);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(32, 83);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(63, 15);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Expired : ";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(92, 80);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(240, 21);
+            this.dateTimePicker1.TabIndex = 31;
             // 
             // NAMA_SUPPLY
             // 
@@ -374,14 +405,10 @@
             this.SUBTOTAL.HeaderText = "SUBTOTAL";
             this.SUBTOTAL.Name = "SUBTOTAL";
             // 
-            // label5
+            // exp
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(487, 27);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 15);
-            this.label5.TabIndex = 29;
-            this.label5.Text = "Satuan";
+            this.exp.HeaderText = "EXPIRED";
+            this.exp.Name = "exp";
             // 
             // FormIsiStok
             // 
@@ -438,11 +465,14 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAMA_SUPPLY;
         private System.Windows.Forms.DataGridViewTextBoxColumn SATUAN;
         private System.Windows.Forms.DataGridViewTextBoxColumn HARGA_BELI;
         private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
         private System.Windows.Forms.DataGridViewTextBoxColumn SUBTOTAL;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exp;
     }
 }
