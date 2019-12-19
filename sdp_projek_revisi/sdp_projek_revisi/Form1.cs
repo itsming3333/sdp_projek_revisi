@@ -42,7 +42,16 @@ namespace sdp_projek_revisi
                 }
                 catch (Exception ex1)
                 {
-                    
+                    try
+                    {
+                        oc = new OracleConnection("user id=system;password=michael123;data source = laptop-c8ps48dq");
+                        oc.Open();
+                        MessageBox.Show("Connection Open Again!");
+                    }
+                    catch (Exception ex2)
+                    {
+                        MessageBox.Show("Error Connection.");
+                    }
                 }
             }
         }
