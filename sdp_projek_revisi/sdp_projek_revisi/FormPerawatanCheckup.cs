@@ -153,18 +153,17 @@ namespace sdp_projek_revisi
                     MessageBox.Show(ex.Message);
                 }
             }
-
             //konfirmasi data
             try
             {
-                OracleCommand cmd = new OracleCommand("UPDATE DTRANS_PERAWATAN_INAP SET KETERANGAN_CHECKUP='"+hasil+"', TINDAK_LANJUT='"+tindak+"' WHERE ID_TRANS='"+id_trans+"'", mainParent.oc);
+                OracleCommand cmd = new OracleCommand("UPDATE DTRANS_PERAWATAN_INAP SET KETERANGAN_CHECKUP='" + hasil + "', TINDAK_LANJUT='" + tindak + "' WHERE ID_TRANS='" + id_trans + "'", mainParent.oc);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Pasien telah selesai dirawat.");
                 resetData();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("HARUS DIISI!");
             }
 
         }
