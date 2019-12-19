@@ -278,7 +278,16 @@ namespace sdp_projek_revisi
                 OracleCommand cmd = new OracleCommand("SELECT ID_PERAWATAN FROM PERAWATAN WHERE NAMA_PERAWATAN = '"+label6.Text+"'", mainParent.oc);
                 String id_rawat = cmd.ExecuteScalar().ToString();
                 cmd = new OracleCommand("SELECT MAX(CTR_CHECKUP) FROM DTRANS_PERAWATAN_INAP WHERE ID_TRANS='"+id_trans+"'", mainParent.oc);
-                int ctr = Convert.ToInt32(cmd.ExecuteScalar().ToString())+1;
+                int ctr;
+
+                if (cmd.ExecuteScalar().ToString() != "")
+                {
+                   ctr = Convert.ToInt32(cmd.ExecuteScalar().ToString()) + 1;
+                }
+                else
+                {
+                    ctr = 0;
+                }
                 String keterangan = textBox2.Text;
                 String keluhan = textBox1.Text;
                 String tindak_lanjut = textBox3.Text;
@@ -309,7 +318,6 @@ namespace sdp_projek_revisi
 
                 if(cmd.ExecuteScalar().ToString() != "")
                 {
-                    MessageBox.Show(cmd.ExecuteScalar().ToString());
                     ctr_supply = Convert.ToInt32(cmd.ExecuteScalar().ToString()) + 1;
                 }
 
@@ -339,12 +347,28 @@ namespace sdp_projek_revisi
                 //Tambah Ruang
                 String nomor = label20.Text;
                 String nama = namaruangan.Text;
+                
                 if (checkBox4.Checked)
                 {
                     try
-                    {}
-                    catch (Exception)
-                    {}
+                    {
+                        OracleDataAdapter oda = new OracleDataAdapter("SELECT R.ID_RUANG, R.HARGA_RUANG, DR.TOTAL_HARI FROM DTRANS_RUANG DR, RUANG R WHERE DR.ID_RUANG = R.ID_RUANG AND DR.ID_TRANS='" + id_trans + "' AND R.STATUS_RUANG='CLOSED'", mainParent.oc);
+                        DataTable inap = new DataTable();
+                        oda.Fill(inap);
+                        String id_ruang = inap.Rows[0].Field<String>(0);
+                        int harga = Convert.ToInt32(inap.Rows[0].Field<int>(1));
+                        int total_hari = Convert.ToInt32(inap.Rows[0].Field<int>(2));
+
+                        total_hari++;
+                        int subtotal = harga * total_hari;
+
+                        OracleCommand cmd = new OracleCommand("UPDATE DTRANS_RUANG SET TOTAL_HARI=" + total_hari + ", SUBTOTAL=" + subtotal + " WHERE ID_RUANG='" + id_ruang + "' AND ID_TRANS='" + id_trans + "'", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }

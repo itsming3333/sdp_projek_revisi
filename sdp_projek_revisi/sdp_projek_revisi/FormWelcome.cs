@@ -12,6 +12,7 @@ namespace sdp_projek_revisi
 {
     public partial class FormWelcome : Form
     {
+        Form1 mainParent;
         public FormWelcome()
         {
             InitializeComponent();
@@ -20,6 +21,11 @@ namespace sdp_projek_revisi
         private void FormWelcome_Load(object sender, EventArgs e)
         {
             Dock = DockStyle.Fill;
+        }
+
+        private void setParent(Form1 mainParent)
+        {
+            this.mainParent = mainParent;
         }
     }
 }
