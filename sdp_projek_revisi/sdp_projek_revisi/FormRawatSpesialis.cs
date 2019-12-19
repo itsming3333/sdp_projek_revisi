@@ -265,8 +265,8 @@ namespace sdp_projek_revisi
             textBox5.Text = "";
             textBox6.Text = "";
             label20.Text = "-";
-            numericUpDown1.Value = 1;
-            numericUpDown2.Value = 1;
+            numericUpDown1.Value = 0;
+            numericUpDown2.Value = 0;
             clearwarning();
 
         }

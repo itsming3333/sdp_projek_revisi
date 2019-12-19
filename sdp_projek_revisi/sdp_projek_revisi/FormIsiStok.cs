@@ -128,8 +128,15 @@ namespace sdp_projek_revisi
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            groupBox1.Enabled = false;
-            groupBox2.Enabled = true;
+            if (comboBox1.Text == "" && textBox3.Text == "")
+            {
+                MessageBox.Show("HARUS DIISI");
+            }
+            else
+            {
+                groupBox1.Enabled = false;
+                groupBox2.Enabled = true;
+            }
         }
 
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
