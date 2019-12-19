@@ -303,6 +303,19 @@ namespace sdp_projek_revisi
                 {
                     cmd = new OracleCommand("INSERT INTO DTRANS_PERAWATAN_INAP VALUES('"+id_trans+"','"+id_rawat+"','"+id_pegawai+"',"+ctr+",'"+keterangan+"','"+keluhan+"','"+tindak_lanjut+ "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'n')", mainParent.oc);
                     cmd.ExecuteNonQuery();
+
+                    Invoice formInvoice = new Invoice();
+                    HasilRawat cr1 = new HasilRawat();
+                    cr1.SetDatabaseLogon("system", "michael123", "laptop-c8ps48dq", "");
+                    cr1.SetParameterValue("id_trans", id_trans);
+                    cr1.SetParameterValue("dateNow", DateTime.Now);
+                    cr1.SetParameterValue("keluhan", keluhan);
+                    cr1.SetParameterValue("hasil", keterangan);
+                    cr1.SetParameterValue("id_pegawai", id_pegawai);
+                    cr1.SetParameterValue("nama_dokter", label4.Text);
+                    formInvoice.crystalReportViewer1.ReportSource = cr1;
+                    formInvoice.crystalReportViewer1.Refresh();
+                    formInvoice.Show();
                 }
                 catch (Exception ex)
                 {
@@ -371,6 +384,10 @@ namespace sdp_projek_revisi
                     }
                 }
             }
+            
+
+
+            
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

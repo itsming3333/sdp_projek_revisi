@@ -147,17 +147,47 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(301, 385);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(48, 21);
             this.numericUpDown2.TabIndex = 51;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown2.ValueChanged += new System.EventHandler(this.NumericUpDown2_ValueChanged);
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(301, 358);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(48, 21);
             this.numericUpDown1.TabIndex = 50;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // label15
@@ -386,9 +416,24 @@
             // numericUpDown4
             // 
             this.numericUpDown4.Location = new System.Drawing.Point(511, 154);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            180,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(47, 21);
             this.numericUpDown4.TabIndex = 68;
+            this.numericUpDown4.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown4.ValueChanged += new System.EventHandler(this.NumericUpDown4_ValueChanged);
             // 
             // label26
@@ -478,9 +523,19 @@
             // numericUpDown5
             // 
             this.numericUpDown5.Location = new System.Drawing.Point(337, 190);
+            this.numericUpDown5.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(47, 21);
             this.numericUpDown5.TabIndex = 64;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown5.ValueChanged += new System.EventHandler(this.NumericUpDown5_ValueChanged);
             // 
             // label22
@@ -548,9 +603,24 @@
             // numericUpDown3
             // 
             this.numericUpDown3.Location = new System.Drawing.Point(337, 154);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(47, 21);
             this.numericUpDown3.TabIndex = 58;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDown3.ValueChanged += new System.EventHandler(this.NumericUpDown3_ValueChanged);
             // 
             // label20

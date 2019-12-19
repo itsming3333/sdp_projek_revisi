@@ -213,6 +213,18 @@
     <Compile Include="FormWelcome.Designer.cs">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="HasilRawat.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HasilRawat.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="LaporanPerawatan.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -334,6 +346,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HasilRawat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HasilRawat.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LaporanPerawatan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
