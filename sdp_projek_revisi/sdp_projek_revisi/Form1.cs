@@ -224,7 +224,25 @@ namespace sdp_projek_revisi
                 }
             }else if(j == "KASIR")
             {
+                FormWelcome frm = new FormWelcome();
+                addTab(frm);
+                btnMenu = new Button[2];
+                for (int i = 0; i < 2; i++)
+                {
+                    btnMenu[i] = new Button();
+                    btnMenu[i].Height = 100;
+                    btnMenu[i].Width = 100;
+                    btnMenu[i].BackColor = Color.LightBlue;
+                    btnMenu[i].Location = new Point(i * 100 + 15, 15);
+                    btnMenu[i].Font = new Font("MS Reference Sans Serif", 9);
+                }
+                btnMenu[0].Text = "Pembayaran"; btnMenu[0].Click += kasir;
+                btnMenu[1].Text = "Logout"; btnMenu[1].Click += logout;
 
+                for (int i = 0; i < 2; i++)
+                {
+                    Controls.Add(btnMenu[i]);
+                }
             }
         }
         
@@ -241,6 +259,12 @@ namespace sdp_projek_revisi
         private void isi_stok(object sender, EventArgs e)
         {
             FormIsiStok frm = new FormIsiStok();
+            frm.setParent(this);
+            addTab(frm);
+        }
+        private void kasir(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
             frm.setParent(this);
             addTab(frm);
         }
