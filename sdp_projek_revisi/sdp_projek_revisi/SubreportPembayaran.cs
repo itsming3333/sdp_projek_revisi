@@ -16,14 +16,14 @@ namespace sdp_projek_revisi {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class LaporanPerawatan : ReportClass {
+    public class SubreportPembayaran : ReportClass {
         
-        public LaporanPerawatan() {
+        public SubreportPembayaran() {
         }
         
         public override string ResourceName {
             get {
-                return "LaporanPerawatan.rpt";
+                return "SubreportPembayaran.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace sdp_projek_revisi {
         
         public override string FullResourceName {
             get {
-                return "sdp_projek_revisi.LaporanPerawatan.rpt";
+                return "sdp_projek_revisi.SubreportPembayaran.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,23 +90,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_dateAwal {
+        public CrystalDecisions.Shared.IParameterField Parameter_DateAwal {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,7 +98,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_dateAkhir {
+        public CrystalDecisions.Shared.IParameterField Parameter_DateAkhir {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -122,9 +106,9 @@ namespace sdp_projek_revisi {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedLaporanPerawatan : Component, ICachedReport {
+    public class CachedSubreportPembayaran : Component, ICachedReport {
         
-        public CachedLaporanPerawatan() {
+        public CachedSubreportPembayaran() {
         }
         
         [Browsable(false)]
@@ -161,7 +145,7 @@ namespace sdp_projek_revisi {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            LaporanPerawatan rpt = new LaporanPerawatan();
+            SubreportPembayaran rpt = new SubreportPembayaran();
             rpt.Site = this.Site;
             return rpt;
         }

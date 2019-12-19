@@ -16,14 +16,14 @@ namespace sdp_projek_revisi {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReportKeuangan : ReportClass {
+    public class subreportgaji : ReportClass {
         
-        public ReportKeuangan() {
+        public subreportgaji() {
         }
         
         public override string ResourceName {
             get {
-                return "ReportKeuangan.rpt";
+                return "subreportgaji.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace sdp_projek_revisi {
         
         public override string FullResourceName {
             get {
-                return "sdp_projek_revisi.ReportKeuangan.rpt";
+                return "sdp_projek_revisi.subreportgaji.rpt";
             }
             set {
                 // Do nothing
@@ -87,28 +87,12 @@ namespace sdp_projek_revisi {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_dateAwal {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_dateAkhir {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReportKeuangan : Component, ICachedReport {
+    public class Cachedsubreportgaji : Component, ICachedReport {
         
-        public CachedReportKeuangan() {
+        public Cachedsubreportgaji() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace sdp_projek_revisi {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReportKeuangan rpt = new ReportKeuangan();
+            subreportgaji rpt = new subreportgaji();
             rpt.Site = this.Site;
             return rpt;
         }

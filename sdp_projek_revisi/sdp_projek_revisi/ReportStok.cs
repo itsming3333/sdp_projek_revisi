@@ -16,14 +16,14 @@ namespace sdp_projek_revisi {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class LaporanPerawatan : ReportClass {
+    public class ReportStok : ReportClass {
         
-        public LaporanPerawatan() {
+        public ReportStok() {
         }
         
         public override string ResourceName {
             get {
-                return "LaporanPerawatan.rpt";
+                return "ReportStok.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace sdp_projek_revisi {
         
         public override string FullResourceName {
             get {
-                return "sdp_projek_revisi.LaporanPerawatan.rpt";
+                return "sdp_projek_revisi.ReportStok.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -82,7 +82,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -122,9 +122,9 @@ namespace sdp_projek_revisi {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedLaporanPerawatan : Component, ICachedReport {
+    public class CachedReportStok : Component, ICachedReport {
         
-        public CachedLaporanPerawatan() {
+        public CachedReportStok() {
         }
         
         [Browsable(false)]
@@ -161,7 +161,7 @@ namespace sdp_projek_revisi {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            LaporanPerawatan rpt = new LaporanPerawatan();
+            ReportStok rpt = new ReportStok();
             rpt.Site = this.Site;
             return rpt;
         }

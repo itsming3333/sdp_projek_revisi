@@ -153,7 +153,7 @@ namespace sdp_projek_revisi
                 btnMenu[0].Text = "Data Pegawai"; btnMenu[0].Click += data_pegawai;
                 btnMenu[1].Text = "Register Pegawai"; btnMenu[1].Click += new_pegawai;
                 btnMenu[2].Text = "Admin Rumah Sakit"; btnMenu[2].Click += data_rs;
-                btnMenu[3].Text = "Laporan";
+                btnMenu[3].Text = "Laporan";btnMenu[3].Click += laporanAdmin;
                 btnMenu[4].Text = "Logout"; btnMenu[4].Click += logout;
 
                 for (int i = 0; i < 5; i++)
@@ -275,6 +275,11 @@ namespace sdp_projek_revisi
         {
             Form2 frm = new Form2();
             frm.setParent(this);
+            addTab(frm);
+        }
+        private void laporanAdmin(object sender, EventArgs e)
+        {
+            FormAllRepost frm = new FormAllRepost();
             addTab(frm);
         }
         private void master_obat(object sender, EventArgs e)

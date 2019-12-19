@@ -16,14 +16,14 @@ namespace sdp_projek_revisi {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class LaporanPerawatan : ReportClass {
+    public class subReportIsiStok : ReportClass {
         
-        public LaporanPerawatan() {
+        public subReportIsiStok() {
         }
         
         public override string ResourceName {
             get {
-                return "LaporanPerawatan.rpt";
+                return "subReportIsiStok.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace sdp_projek_revisi {
         
         public override string FullResourceName {
             get {
-                return "sdp_projek_revisi.LaporanPerawatan.rpt";
+                return "sdp_projek_revisi.subReportIsiStok.rpt";
             }
             set {
                 // Do nothing
@@ -106,7 +106,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_dateAwal {
+        public CrystalDecisions.Shared.IParameterField Parameter_DataAwal {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,7 +114,7 @@ namespace sdp_projek_revisi {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_dateAkhir {
+        public CrystalDecisions.Shared.IParameterField Parameter_DateAkhir {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -122,9 +122,9 @@ namespace sdp_projek_revisi {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedLaporanPerawatan : Component, ICachedReport {
+    public class CachedsubReportIsiStok : Component, ICachedReport {
         
-        public CachedLaporanPerawatan() {
+        public CachedsubReportIsiStok() {
         }
         
         [Browsable(false)]
@@ -161,7 +161,7 @@ namespace sdp_projek_revisi {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            LaporanPerawatan rpt = new LaporanPerawatan();
+            subReportIsiStok rpt = new subReportIsiStok();
             rpt.Site = this.Site;
             return rpt;
         }

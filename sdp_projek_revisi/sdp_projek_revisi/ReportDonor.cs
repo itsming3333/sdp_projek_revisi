@@ -16,14 +16,14 @@ namespace sdp_projek_revisi {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class LaporanPerawatan : ReportClass {
+    public class ReportDonor : ReportClass {
         
-        public LaporanPerawatan() {
+        public ReportDonor() {
         }
         
         public override string ResourceName {
             get {
-                return "LaporanPerawatan.rpt";
+                return "ReportDonor.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace sdp_projek_revisi {
         
         public override string FullResourceName {
             get {
-                return "sdp_projek_revisi.LaporanPerawatan.rpt";
+                return "sdp_projek_revisi.ReportDonor.rpt";
             }
             set {
                 // Do nothing
@@ -122,9 +122,9 @@ namespace sdp_projek_revisi {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedLaporanPerawatan : Component, ICachedReport {
+    public class CachedReportDonor : Component, ICachedReport {
         
-        public CachedLaporanPerawatan() {
+        public CachedReportDonor() {
         }
         
         [Browsable(false)]
@@ -161,7 +161,7 @@ namespace sdp_projek_revisi {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            LaporanPerawatan rpt = new LaporanPerawatan();
+            ReportDonor rpt = new ReportDonor();
             rpt.Site = this.Site;
             return rpt;
         }
