@@ -32,6 +32,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -52,6 +54,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -66,6 +70,9 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -75,13 +82,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -139,14 +139,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Member";
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.Red;
+            this.label34.Location = new System.Drawing.Point(265, 421);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(84, 15);
+            this.label34.TabIndex = 72;
+            this.label34.Text = "Pilih Ruangan";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(265, 379);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(84, 15);
+            this.label33.TabIndex = 71;
+            this.label33.Text = "Pilih Ruangan";
+            // 
             // numericUpDown2
             // 
             this.numericUpDown2.Location = new System.Drawing.Point(301, 397);
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(48, 21);
             this.numericUpDown2.TabIndex = 51;
@@ -159,11 +174,6 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(301, 358);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(48, 21);
             this.numericUpDown1.TabIndex = 50;
@@ -355,6 +365,26 @@
             this.groupBox2.Text = "Perawatan";
             this.groupBox2.Enter += new System.EventHandler(this.GroupBox2_Enter);
             // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(15, 451);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(84, 15);
+            this.label26.TabIndex = 70;
+            this.label26.Text = "Pilih Ruangan";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.Red;
+            this.label22.Location = new System.Drawing.Point(15, 167);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(121, 15);
+            this.label22.TabIndex = 69;
+            this.label22.Text = "Keluhan harus terisi";
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -502,6 +532,36 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kontak Rujukan";
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.Red;
+            this.label29.Location = new System.Drawing.Point(106, 156);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(84, 15);
+            this.label29.TabIndex = 73;
+            this.label29.Text = "Pilih Ruangan";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Red;
+            this.label28.Location = new System.Drawing.Point(103, 119);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(84, 15);
+            this.label28.TabIndex = 72;
+            this.label28.Text = "Pilih Ruangan";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.Red;
+            this.label27.Location = new System.Drawing.Point(106, 82);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 15);
+            this.label27.TabIndex = 71;
+            this.label27.Text = "Pilih Ruangan";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(10, 178);
@@ -579,76 +639,6 @@
             this.button3.Text = "Next";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(15, 167);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(121, 15);
-            this.label22.TabIndex = 69;
-            this.label22.Text = "Keluhan harus terisi";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(15, 451);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(84, 15);
-            this.label26.TabIndex = 70;
-            this.label26.Text = "Pilih Ruangan";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(106, 82);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(84, 15);
-            this.label27.TabIndex = 71;
-            this.label27.Text = "Pilih Ruangan";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.Red;
-            this.label28.Location = new System.Drawing.Point(103, 119);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(84, 15);
-            this.label28.TabIndex = 72;
-            this.label28.Text = "Pilih Ruangan";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.ForeColor = System.Drawing.Color.Red;
-            this.label29.Location = new System.Drawing.Point(106, 156);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(84, 15);
-            this.label29.TabIndex = 73;
-            this.label29.Text = "Pilih Ruangan";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(265, 379);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(84, 15);
-            this.label33.TabIndex = 71;
-            this.label33.Text = "Pilih Ruangan";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.ForeColor = System.Drawing.Color.Red;
-            this.label34.Location = new System.Drawing.Point(265, 421);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(84, 15);
-            this.label34.TabIndex = 72;
-            this.label34.Text = "Pilih Ruangan";
             // 
             // FormRawatSpesialis
             // 

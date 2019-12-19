@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,11 @@ namespace sdp_projek_revisi
     public partial class FormRawatSpesialis : Form
     {
         Form1 mainParent;
+        String id_trans;
+        String nama_member;
+        String nomor_ruang;
+        String tipe_rawat;
+
         public FormRawatSpesialis()
         {
             InitializeComponent();
@@ -137,109 +143,160 @@ namespace sdp_projek_revisi
             textBox6.Text = "Pribadi";
         }
 
+        private void PrintReceipt()
+        {
+            PrintDialog printdialog = new PrintDialog();
+            PrintDocument printdocument = new PrintDocument();
+            printdialog.Document = printdocument;
+            printdocument.PrintPage += new PrintPageEventHandler(printdocument_PrintPage);
+            DialogResult result = printdialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                printdocument.Print();
+            }
+        }
+
+        private void printdocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float fontHeight = font.GetHeight();
+            int startx = 10;
+            int starty = 10;
+            int offset = 40;
+
+            graphics.DrawString("TIKET CHECKUP", new Font("Courier New", 15), new SolidBrush(Color.Black), startx, starty);
+            graphics.DrawString(id_trans, new Font("Courier New", 14), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString(DateTime.Now.ToLongDateString(), new Font("Courier New", 6), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 15;
+            graphics.DrawString(nama_member, new Font("Courier New", 12), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString("================", new Font("Courier New", 12), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString(tipe_rawat, new Font("Courier New", 10), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString(nomor_ruang, new Font("Courier New", 36), new SolidBrush(Color.Black), startx, starty + offset);
+
+        }
+
         private void Button3_Click(object sender, EventArgs e)
         {
-            bool validation = true;
-            String total = label21.Text.Remove(0, 25);
-            String id_member = label3.Text;
-            String status_pelunasan = "n";
-            String diagnosa_masuk = textBox2.Text;
-            String alergi = textBox3.Text;
-            String wali = textBox4.Text;
-            String telp_wali = textBox5.Text;
-            String relasi_wali = textBox6.Text;
-            String jenis_rawat = "checkup";
+            if (MessageBox.Show("Pastikan data sudah benar!\nLanjutkan transaksi ?", "Cetak Nota", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                bool validation = true;
+                String total = label21.Text.Remove(0, 25);
+                String id_member = label3.Text;
+                String status_pelunasan = "n";
+                String diagnosa_masuk = textBox2.Text;
+                String alergi = textBox3.Text;
+                String wali = textBox4.Text;
+                String telp_wali = textBox5.Text;
+                String relasi_wali = textBox6.Text;
+                String jenis_rawat = "checkup";
 
+
+                if (textBox2.Text == "")
+                {
+                    validation = false;
+                    label22.Text = "Keluhan Harus Terisi";
+                }
+                if (label20.Text == "-")
+                {
+                    validation = false;
+                    label26.Text = "Pilih Ruangan";
+                }
+                if (textBox4.Text == "")
+                {
+                    validation = false;
+                    label27.Text = "Masukan nama kontak rujukan";
+                }
+                if (textBox5.Text == "")
+                {
+                    validation = false;
+                    label28.Text = "Masukan Telp. kontak rujukan";
+                }
+                if (!textBox5.Text.All(char.IsNumber))
+                {
+                    validation = false;
+                    label28.Text = "Telp. kontak rujukan harus angka";
+                }
+                if (textBox6.Text == "")
+                {
+                    validation = false;
+                    label29.Text = "Masukan relasi kontak rujukan";
+                }
+                if (numericUpDown1.Minimum == 0)
+                {
+                    validation = false;
+                    label24.Text = "Masukan Berat Badannya";
+                }
+                if (numericUpDown2.Minimum == 0)
+                {
+                    validation = false;
+                    label24.Text = "Masukan Tinggi Badannya";
+                }
+                //VALIDATION CHECK
+
+                if (validation)
+                {
+                    OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM PEGAWAI WHERE NAMA_PEGAWAI = '" + label30.Text + "'", mainParent.oc);
+                    DataTable selectedPegawai = new DataTable();
+                    oda.Fill(selectedPegawai);
+                    oda = new OracleDataAdapter("SELECT * FROM PERAWATAN WHERE NAMA_PERAWATAN = '" + label31.Text + "'", mainParent.oc);
+                    DataTable selectedRawat = new DataTable();
+                    oda.Fill(selectedRawat);
+
+                    String id_rawat = selectedRawat.Rows[0].Field<String>(0);
+                    String id_pegawai = selectedPegawai.Rows[0].Field<String>(0);
+                    String dd = DateTime.Now.Day.ToString();
+                    String mm = DateTime.Now.Month.ToString();
+                    String yyyy = DateTime.Now.Year.ToString();
+                    String id = dd + mm + yyyy;
+
+                    OracleCommand cmd = new OracleCommand("SELECT AUTO_GEN_ID_TRANS('" + id + "') FROM DUAL", mainParent.oc);
+                    id += cmd.ExecuteScalar().ToString();
+
+                    try
+                    {
+                        //INSERT
+                        cmd = new OracleCommand("INSERT INTO TRANSAKSI VALUES('" + id.ToUpper() + "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'','ANTRI'," + total + ",'" + id_member.ToUpper() + "','" + status_pelunasan.ToUpper() + "','" + diagnosa_masuk.ToUpper() + "','" + alergi + "','" + wali.ToUpper() + "','" + telp_wali + "','" + relasi_wali.ToUpper() + "','" + jenis_rawat.ToUpper() + "')", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+                        cmd = new OracleCommand("INSERT INTO DTRANS_PERAWATAN_INAP VALUES('" + id + "','" + id_rawat + "','" + id_pegawai + "',0,'ANTRI','','ANTRI',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'n')", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+
+                        //print
+                        cmd = new OracleCommand("SELECT NAMA_MEMBER FROM MEMBER WHERE ID_MEMBER='" + id_member + "'", mainParent.oc);
+                        nama_member = cmd.ExecuteScalar().ToString();
+                        nomor_ruang = label20.Text;
+                        tipe_rawat = label31.Text;
+                        id_trans = id;
+                        PrintReceipt();
+
+                        groupBox2.Enabled = false;
+                        groupBox3.Enabled = false;
+                        textBox2.Text = "";
+                        textBox3.Text = "";
+                        textBox4.Text = "";
+                        textBox5.Text = "";
+                        textBox6.Text = "";
+                        label20.Text = "-";
+                        clearwarning();
+                        
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                else
+                {
+                    //VALIDATION ERROR
+                }
+            }
             
-            if (textBox2.Text == "")
-            {
-                validation = false;
-                label22.Text = "Keluhan Harus Terisi";
-            }
-            if (label20.Text == "-")
-            {
-                validation = false;
-                label26.Text = "Pilih Ruangan";
-            }
-            if(textBox4.Text == "")
-            {
-                validation = false;
-                label27.Text = "Masukan nama kontak rujukan";
-            }
-            if (textBox5.Text == "")
-            {
-                validation = false;
-                label28.Text = "Masukan Telp. kontak rujukan";
-            }
-            if (!textBox5.Text.All(char.IsNumber))
-            {
-                validation = false;
-                label28.Text = "Telp. kontak rujukan harus angka";
-            }
-            if (textBox6.Text == "")
-            {
-                validation = false;
-                label29.Text = "Masukan relasi kontak rujukan";
-            }
-            if (numericUpDown1.Minimum == 0)
-            {
-                validation = false;
-                label24.Text = "Masukan Berat Badannya";
-            }
-            if (numericUpDown2.Minimum == 0)
-            {
-                validation = false;
-                label24.Text = "Masukan Tinggi Badannya";
-            }
-            //VALIDATION CHECK
-
-            if (validation)
-            {
-                OracleDataAdapter oda = new OracleDataAdapter("SELECT * FROM PEGAWAI WHERE NAMA_PEGAWAI = '" + label30.Text + "'", mainParent.oc);
-                DataTable selectedPegawai = new DataTable();
-                oda.Fill(selectedPegawai);
-                oda = new OracleDataAdapter("SELECT * FROM PERAWATAN WHERE NAMA_PERAWATAN = '" + label31.Text + "'", mainParent.oc);
-                DataTable selectedRawat = new DataTable();
-                oda.Fill(selectedRawat);
-
-                String id_rawat = selectedRawat.Rows[0].Field<String>(0);
-                String id_pegawai = selectedPegawai.Rows[0].Field<String>(0);
-                String dd = DateTime.Now.Day.ToString();
-                String mm = DateTime.Now.Month.ToString();
-                String yyyy = DateTime.Now.Year.ToString();
-                String id = dd + mm + yyyy;
-
-                OracleCommand cmd = new OracleCommand("SELECT AUTO_GEN_ID_TRANS('" + id + "') FROM DUAL", mainParent.oc);
-                id += cmd.ExecuteScalar().ToString();
-
-                try
-                {
-                    //INSERT
-                    cmd = new OracleCommand("INSERT INTO TRANSAKSI VALUES('"+id.ToUpper()+ "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'','ANTRI',"+total+",'"+id_member.ToUpper()+"','"+status_pelunasan.ToUpper()+"','"+diagnosa_masuk.ToUpper()+"','"+alergi+"','"+wali.ToUpper()+"','"+telp_wali+"','"+relasi_wali.ToUpper()+"','"+jenis_rawat.ToUpper()+"')", mainParent.oc);
-                    cmd.ExecuteNonQuery();
-                    cmd = new OracleCommand("INSERT INTO DTRANS_PERAWATAN_INAP VALUES('"+id+"','"+id_rawat+"','"+id_pegawai+ "',0,'ANTRI','','ANTRI',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'n')", mainParent.oc);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("BERHASIL!");
-                    groupBox2.Enabled = false;
-                    groupBox3.Enabled = false;
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    textBox4.Text = "";
-                    textBox5.Text = "";
-                    textBox6.Text = "";
-                    label20.Text = "-";
-                    clearwarning();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            else
-            {
-                //VALIDATION ERROR
-            }
         }
 
         private void GroupBox2_Enter(object sender, EventArgs e)
@@ -265,8 +322,8 @@ namespace sdp_projek_revisi
             textBox5.Text = "";
             textBox6.Text = "";
             label20.Text = "-";
-            numericUpDown1.Value = 1;
-            numericUpDown2.Value = 1;
+            numericUpDown1.Value = 0;
+            numericUpDown2.Value = 0;
             clearwarning();
 
         }

@@ -101,32 +101,39 @@ namespace sdp_projek_revisi
 
             if (MessageBox.Show("Periksa kembali isi form rawat inap!\nApakah data yang diisi sudah benar ?", "Konfirmasi Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                if (validasi)
+                try
                 {
-                    //Auto gen id transaksi
-                    String id_trans = "";
-                    String dd = DateTime.Now.Day.ToString();
-                    String mm = DateTime.Now.Month.ToString();
-                    String yyyy = DateTime.Now.Year.ToString();
-                    id_trans = dd + mm + yyyy;
+                    if (validasi)
+                    {
+                        //Auto gen id transaksi
+                        String id_trans = "";
+                        String dd = DateTime.Now.Day.ToString();
+                        String mm = DateTime.Now.Month.ToString();
+                        String yyyy = DateTime.Now.Year.ToString();
+                        id_trans = dd + mm + yyyy;
 
-                    OracleCommand cmd = new OracleCommand("SELECT AUTO_GEN_ID_TRANS('" + id_trans + "') FROM DUAL", mainParent.oc);
-                    id_trans += cmd.ExecuteScalar().ToString();
+                        OracleCommand cmd = new OracleCommand("SELECT AUTO_GEN_ID_TRANS('" + id_trans + "') FROM DUAL", mainParent.oc);
+                        id_trans += cmd.ExecuteScalar().ToString();
 
-                    //MENAMBAH TRANSAKSI
-                    cmd = new OracleCommand("INSERT INTO TRANSAKSI VALUES('" + id_trans + "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'',''," + total + ",'" + id_member + "','N','" + diagnosa_masuk.ToUpper() + "','" + alergi.ToUpper() + "','" + wali.ToUpper() + "','" + telp_wali + "','" + relasi_wali.ToUpper() + "','INAP')", mainParent.oc);
-                    cmd.ExecuteNonQuery();
-                    //MENAMBAH RUANG
-                    cmd = new OracleCommand("INSERT INTO DTRANS_RUANG VALUES('" + id_ruang + "','" + id_trans + "','1'," + harga + ",'N')", mainParent.oc);
-                    cmd.ExecuteNonQuery();
-                    cmd = new OracleCommand("UPDATE RUANG SET STATUS_RUANG='CLOSED' WHERE ID_RUANG='" + id_ruang + "'", mainParent.oc);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Berhasil menambah transaksi baru");
-                    refresh();
+                        //MENAMBAH TRANSAKSI
+                        cmd = new OracleCommand("INSERT INTO TRANSAKSI VALUES('" + id_trans + "',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'',''," + total + ",'" + id_member + "','N','" + diagnosa_masuk.ToUpper() + "','" + alergi.ToUpper() + "','" + wali.ToUpper() + "','" + telp_wali + "','" + relasi_wali.ToUpper() + "','INAP')", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+                        //MENAMBAH RUANG
+                        cmd = new OracleCommand("INSERT INTO DTRANS_RUANG VALUES('" + id_ruang + "','" + id_trans + "','1'," + harga + ",'N')", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+                        cmd = new OracleCommand("UPDATE RUANG SET STATUS_RUANG='CLOSED' WHERE ID_RUANG='" + id_ruang + "'", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Berhasil menambah transaksi baru");
+                        refresh();
+                    }
+                    else
+                    {
+                        //SHOW ERROR
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    //SHOW ERROR
+                    MessageBox.Show("HARUS KEISI!");
                 }
             }
         }
