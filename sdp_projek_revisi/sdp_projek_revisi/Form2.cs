@@ -158,7 +158,7 @@ namespace sdp_projek_revisi
 
         private void kembalian()
         {
-            int kembalian = total - Convert.ToInt32(numericUpDown1.Value.ToString());
+            int kembalian = Convert.ToInt32(numericUpDown1.Value.ToString()) - total;
             label12.Text = kembalian + "";
         }
 
@@ -255,6 +255,20 @@ namespace sdp_projek_revisi
             graphics.DrawString("BUKTI PEMBAYARAN", new Font("Courier New", 14), new SolidBrush(Color.Black), startx, starty);
             graphics.DrawString(id_trans, new Font("Courier New", 14), new SolidBrush(Color.Black), startx, starty + offset);
 
+        }
+
+        private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+            try
+            {
+                if (dataGridView2.Rows[row].Cells[0].Value.ToString() != "" && dataGridView2.Rows[row].Cells[1].Value.ToString() != "")
+                {
+
+                }
+            }
+            catch (Exception)
+            { }
         }
     }
 }
