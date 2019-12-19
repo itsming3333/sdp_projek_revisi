@@ -343,9 +343,19 @@ namespace sdp_projek_revisi
                 if (checkBox4.Checked)
                 {
                     try
-                    {}
-                    catch (Exception)
-                    {}
+                    {
+                        OracleDataAdapter oda = new OracleCommand("SELECT R.ID_RUANG, R.HARGA_RUANG, DR.TOTAL_HARI FROM DTRANS_RUANG DR, RUANG R WHERE DR.ID_RUANG = R.ID_RUANG AND DR.ID_TRANS='"+id_trans+"' AND R.STATUS_RUANG='CLOSE'", mainParent.oc);
+                        DataTable inap = new DataTable();
+                        oda.Fill(inap);
+                        String id_ruang = inap.Rows[0].Field<String>(0);
+                        int harga = Convert.ToInt32(inap.Rows[0].Field<Int64>(1));
+                        int total_hari = Convert.ToInt32(inap.Rows[0].Field<Int64>(2));
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }

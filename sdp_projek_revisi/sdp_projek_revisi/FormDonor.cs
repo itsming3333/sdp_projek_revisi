@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace sdp_projek_revisi
 {
@@ -15,6 +16,13 @@ namespace sdp_projek_revisi
     {
         Form1 mainParent;
         String id_selected_member = "";
+        String id_trans = "";
+        String kantong_darah = "";
+        String psuhu = "";
+        String ptensi = "";
+        String prhesus = "";
+        String pnadi = "";
+
         public FormDonor()
         {
             InitializeComponent();
@@ -57,7 +65,7 @@ namespace sdp_projek_revisi
             oda.Fill(member);
             dataGridView1.DataSource = member;
 
-            oda = new OracleDataAdapter("SELECT TO_CHAR(D.TGL_DONOR,'DD/MM/YYYY') AS TANGGAL, S.NAMA_SUPPLY AS DONOR FROM DONOR D, MEMBER M, SUPPLY S WHERE D.ID_MEMBER = M.ID_MEMBER AND D.ID_SUPPLY = S.ID_SUPPLY", mainParent.oc);
+            oda = new OracleDataAdapter("SELECT TO_CHAR(D.TGL_DONOR,'DD/MM/YYYY') AS TANGGAL, S.NAMA_SUPPLY AS DONOR FROM DONOR D, MEMBER M, SUPPLY S WHERE D.ID_MEMBER = M.ID_MEMBER AND D.ID_SUPPLY = S.ID_SUPPLY AND M.ID_MEMBER='"+id_selected_member+"'", mainParent.oc);
             DataTable trans_donor = new DataTable();
             oda.Fill(trans_donor);
             dataGridView2.DataSource = trans_donor;
@@ -120,8 +128,13 @@ namespace sdp_projek_revisi
                 numericUpDown1.Value = berat;
                 numericUpDown2.Value = tinggi;
                 groupBox2.Enabled = true;
+                id_selected_member = label3.Text;
                 reset();
                 updateLayak();
+                oda = new OracleDataAdapter("SELECT TO_CHAR(D.TGL_DONOR,'DD/MM/YYYY') AS TANGGAL, S.NAMA_SUPPLY AS DONOR FROM DONOR D, MEMBER M, SUPPLY S WHERE D.ID_MEMBER = M.ID_MEMBER AND D.ID_SUPPLY = S.ID_SUPPLY AND M.ID_MEMBER='" + id_selected_member + "'", mainParent.oc);
+                DataTable trans_donor = new DataTable();
+                oda.Fill(trans_donor);
+                dataGridView2.DataSource = trans_donor;
             }
             catch (Exception ex)
             {
@@ -204,31 +217,90 @@ namespace sdp_projek_revisi
             }
             else
             {
-                String dd = DateTime.Now.Day.ToString();
-                String mm = DateTime.Now.Month.ToString();
-                String yyyy = DateTime.Now.Year.ToString();
-                String id = "D" + dd + mm + yyyy;
-
-                cmd = new OracleCommand("SELECT AUTO_GEN_ID_DONOR('" + id + "') FROM DUAL", mainParent.oc);
-                id += cmd.ExecuteScalar().ToString();
-
-                String id_member = label3.Text;
-
-                try
+                if (MessageBox.Show("Pastikan data sudah benar!\nLanjutkan transaksi ?", "Cetak Nota", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    //INSERT
-                    cmd = new OracleCommand("INSERT INTO DONOR VALUES('"+id+"','"+id_member+"','"+id_supply+"','"+tensi+"','"+suhu+"','"+reaksi+ "','',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'"+nadi+"','"+rhesus+"','')", mainParent.oc);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("BERHASIL!");
+                    String dd = DateTime.Now.Day.ToString();
+                    String mm = DateTime.Now.Month.ToString();
+                    String yyyy = DateTime.Now.Year.ToString();
+                    String id = "D" + dd + mm + yyyy;
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    cmd = new OracleCommand("SELECT AUTO_GEN_ID_DONOR('" + id + "') FROM DUAL", mainParent.oc);
+                    id += cmd.ExecuteScalar().ToString();
+
+                    String id_member = label3.Text;
+                    
+                    
+                    
+                    try
+                    {
+                        //INSERT
+                        cmd = new OracleCommand("INSERT INTO DONOR VALUES('" + id + "','" + id_member + "','" + id_supply + "','" + tensi + "','" + suhu + "','" + reaksi + "','',TO_DATE(LPAD('" + dd + "',2,'0')||'/'||LPAD('" + mm + "',2,'0')||'/'||LPAD('" + yyyy + "',4,'0'),'DD/MM/YYYY'),'" + nadi + "','" + rhesus + "','')", mainParent.oc);
+                        cmd.ExecuteNonQuery();
+                        id_trans = id;
+                        kantong_darah = id_supply;
+                        ptensi = tensi+"";
+                        prhesus = rhesus + "";
+                        psuhu = suhu + "";
+                        pnadi = nadi + "";
+                        //print
+                        PrintReceipt();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             ctr++;
             kosong();
+        }
+
+        private void PrintReceipt()
+        {
+            PrintDialog printdialog = new PrintDialog();
+            PrintDocument printdocument = new PrintDocument();
+            printdialog.Document = printdocument;
+            printdocument.PrintPage += new PrintPageEventHandler(printdocument_PrintPage);
+            DialogResult result = printdialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                printdocument.Print();
+            }
+        }
+
+        private void printdocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float fontHeight = font.GetHeight();
+            int startx = 10;
+            int starty = 10;
+            int offset = 40;
+
+            graphics.DrawString("TIKET DONOR DARAH", new Font("Courier New", 18), new SolidBrush(Color.Black), startx, starty);
+            graphics.DrawString(id_trans, new Font("Courier New", 14), new SolidBrush(Color.Black), startx, starty+offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString(DateTime.Now.ToLongDateString(), new Font("Courier New", 6), new SolidBrush(Color.Black), startx, starty + offset);
+
+            OracleCommand cmd = new OracleCommand("SELECT NAMA_MEMBER FROM MEMBER WHERE ID_MEMBER='"+id_selected_member+"'", mainParent.oc);
+            String nama = cmd.ExecuteScalar().ToString();
+            cmd = new OracleCommand("SELECT NAMA_SUPPLY FROM SUPPLY WHERE ID_SUPPLY='" + kantong_darah + "'", mainParent.oc);
+            String supply = cmd.ExecuteScalar().ToString();
+            offset += (int)fontHeight + 15;
+            graphics.DrawString(nama, new Font("Courier New", 12), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString("================", new Font("Courier New", 12), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString(supply, new Font("Courier New", 9), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString("Tensi : "+ptensi+" mm Hg", new Font("Courier New", 6), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString("Rhesus : "+prhesus, new Font("Courier New", 6), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString("Suhu : "+psuhu + " Celcius", new Font("Courier New", 6), new SolidBrush(Color.Black), startx, starty + offset);
+            offset += (int)fontHeight + 5;
+            graphics.DrawString("Nadi : " + pnadi + " BPM", new Font("Courier New", 6), new SolidBrush(Color.Black), startx, starty + offset);
         }
 
         private void Label18_Click(object sender, EventArgs e)
