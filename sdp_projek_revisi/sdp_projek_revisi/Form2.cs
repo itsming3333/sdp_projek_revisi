@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -213,12 +214,47 @@ namespace sdp_projek_revisi
                         ocmd = new OracleCommand("UPDATE DTRANS_PEMBAYARAN SET JUMLAH_PEMBAYARAN=" + totalBefore + " WHERE ID_TRANS='" + id_trans + "' AND ID_PEMBAYARAN='" + id_bayar + "'", mainParent.oc);
                         ocmd.ExecuteNonQuery();
                     }
+                    PrintReceipt();
+                    reset();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void reset()
+        {
+
+        }
+
+        private void PrintReceipt()
+        {
+            PrintDialog printdialog = new PrintDialog();
+            PrintDocument printdocument = new PrintDocument();
+            printdialog.Document = printdocument;
+            printdocument.PrintPage += new PrintPageEventHandler(printdocument_PrintPage);
+            DialogResult result = printdialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                printdocument.Print();
+            }
+        }
+
+        private void printdocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics graphics = e.Graphics;
+            Font font = new Font("Courier New", 12);
+            float fontHeight = font.GetHeight();
+            int startx = 10;
+            int starty = 10;
+            int offset = 40;
+
+            graphics.DrawString("BUKTI PEMBAYARAN", new Font("Courier New", 14), new SolidBrush(Color.Black), startx, starty);
+            graphics.DrawString(id_trans, new Font("Courier New", 14), new SolidBrush(Color.Black), startx, starty + offset);
+
         }
     }
 }
