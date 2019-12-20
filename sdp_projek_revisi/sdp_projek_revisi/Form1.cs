@@ -46,7 +46,7 @@ namespace sdp_projek_revisi
                     {
                         oc = new OracleConnection("user id=system;password=michael123;data source = laptop-c8ps48dq");
                         oc.Open();
-                        MessageBox.Show("Connection Open Again!");
+                        MessageBox.Show("Connection Open Bison");
                     }
                     catch (Exception ex2)
                     {

@@ -123,5 +123,12 @@ INSERT INTO SUPPLY VALUES('SO009','KANTONG DARAH AB 350CC','-',360000,'DONOR','U
 INSERT INTO SUPPLY VALUES('SO010','KANTONG DARAH AB 450CC','-',360000,'DONOR','UNIT');
 INSERT INTO SUPPLY VALUES('SO011','KANTONG DARAH AB 600CC','-',360000,'DONOR','UNIT');
 INSERT INTO SUPPLY VALUES('SO012','BETADINE 60ML','obat untuk membersihkan luka akibat cedera pada kulit, Betadine mengandung zat aktif povidone iodine yang bekerja membunuh bakteri pada luka.',60000,'OBAT','UNIT');
+INSERT INTO SUPPLY VALUES('SO013','BETADINE 120ML','obat untuk membersihkan luka akibat cedera pada kulit, Betadine mengandung zat aktif povidone iodine yang bekerja membunuh bakteri pada luka.',90000,'OBAT','UNIT');
+INSERT INTO SUPPLY VALUES('SO014','OBAT TIDUR 30GRAM','obat ini untuk buat seseorang yang susah tidur menjadi tidur nyenyak.',60000,'OBAT','UNIT');
+INSERT INTO SUPPLY VALUES('SO015','OBAT TIDUR 60GRAM','obat ini untuk buat seseorang yang susah tidur menjadi tidur nyenyak.',120000,'OBAT','UNIT');
+INSERT INTO SUPPLY VALUES('SO016','OBAT TIDUR 90GRAM','obat ini untuk buat seseorang yang susah tidur menjadi tidur nyenyak.',180000,'OBAT','UNIT');
+INSERT INTO SUPPLY VALUES('SO017','MILANTA 30ML','obat untuk membuat melancarkan buang air besar.',30000,'OBAT','UNIT');
+INSERT INTO SUPPLY VALUES('SO018','MILANTA 60ML','obat untuk membuat melancarkan buang air besar.',60000,'OBAT','UNIT');
+INSERT INTO SUPPLY VALUES('SO019','MILANTA 90ML','obat untuk membuat melancarkan buang air besar.',90000,'OBAT','UNIT');
 
 COMMIT;
