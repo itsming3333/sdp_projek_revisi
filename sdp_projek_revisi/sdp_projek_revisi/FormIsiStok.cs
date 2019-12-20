@@ -227,6 +227,7 @@ namespace sdp_projek_revisi
                 row.Cells[2].Value = numericUpDown2.Value.ToString();
                 row.Cells[3].Value = numericUpDown1.Value.ToString();
                 row.Cells[4].Value = label10.Text;
+                row.Cells[5].Value = dateTimePicker1.Value.Day.ToString().PadLeft(2,'0') + "/" + dateTimePicker1.Value.Month.ToString().PadLeft(2,'0') + "/" + dateTimePicker1.Value.Year.ToString().PadLeft(4,'0');
 
                 dataGridView1.Rows.Add(row);
             }
@@ -303,10 +304,13 @@ namespace sdp_projek_revisi
                     String id_supply = cmd.ExecuteScalar().ToString();
                     String total = dataGridView1.Rows[i].Cells[3].Value.ToString();
                     String harga_beli = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                    String expired = dataGridView1.Rows[i].Cells[5].Value.ToString();
                     cmd = new OracleCommand("INSERT INTO DTRANS_STOK VALUES('" + id_isi + "','" + id_supply + "'," + total + "," + harga_beli + ")", mainParent.oc);
                     cmd.ExecuteNonQuery();
+                    cmd = new OracleCommand("INSERT INTO DSUPPLY VALUES('"+tanda+"','"+id_supply+"',TO_DATE('"+expired+"','DD/MM/YYYY'),"+total+")", mainParent.oc);
+                    cmd.ExecuteNonQuery();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {}
                     
             }

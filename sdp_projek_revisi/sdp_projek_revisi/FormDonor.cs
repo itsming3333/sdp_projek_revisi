@@ -46,9 +46,9 @@ namespace sdp_projek_revisi
         {
             comboBox1.SelectedIndex = 0;
             radioButton1.Checked = true;
-            numericUpDown3.Value = 0;
-            numericUpDown4.Value = 0;
-            numericUpDown5.Value = 0;
+            numericUpDown3.Value = 1;
+            numericUpDown4.Value = 1;
+            numericUpDown5.Value = 1;
             radioButton7.Checked = true;
             radioButton4.Checked = true;
         }
@@ -310,11 +310,11 @@ namespace sdp_projek_revisi
 
         public void kosong()
         {
-            numericUpDown1.Value = 0;
-            numericUpDown2.Value = 0;
-            numericUpDown3.Value = 0;
-            numericUpDown4.Value = 0;
-            numericUpDown5.Value = 0;
+            numericUpDown1.Value = 1;
+            numericUpDown2.Value = 1;
+            numericUpDown3.Value = 1;
+            numericUpDown4.Value = 1;
+            numericUpDown5.Value = 1;
             groupBox2.Enabled = false;
         }
 

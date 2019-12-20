@@ -115,12 +115,13 @@ namespace sdp_projek_revisi
         private void Button2_Click(object sender, EventArgs e)
         {
             bool validate = true;
-
+            
             //VALIDATION ERROR
 
             if (validate)
             {
                 String keterangan = "";
+                String barcode = textBox4.Text;
                 if (radioButton1.Checked)
                 {
                     keterangan = "SUKSES-" + textBox3.Text;
@@ -145,9 +146,14 @@ namespace sdp_projek_revisi
                     reaksi = textBox2.Text;
                 }
 
-
+                
                 String petugas = mainParent.id_login;
                 OracleCommand cmd = new OracleCommand("UPDATE DONOR SET ID_PETUGAS_DONOR='"+petugas+"',KETERANGAN_DONOR='"+keterangan+"', REAKSI_DONOR='"+reaksi+"'", mainParent.oc);
+                cmd.ExecuteNonQuery();
+                cmd = new OracleCommand("SELECT ID_SUPPLY FROM SUPPLY WHERE NAMA_SUPPLY='"+label18.Text+"'", mainParent.oc);
+                String id_supply = cmd.ExecuteScalar().ToString();
+                MessageBox.Show(id_supply+" - "+barcode);
+                cmd = new OracleCommand("INSERT INTO DSUPPLY VALUES('"+barcode+"','"+id_supply+ "',TO_DATE('30/12/9999','DD/MM/YYYY'),1)", mainParent.oc);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Berhasil melakukan donor.");
 
